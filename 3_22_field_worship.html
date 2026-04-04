@@ -324,9 +324,31 @@
             font-style: normal;
         }
 
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0 20px 0;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            transform: translateX(-5px);
+            background: #a35439;
+            color: white;
+        }
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button">← 返回週報存檔中心</a>
 
 <!-- ===== PAGE 1: 封面 + 行程 ===== -->
 <div class="page">
