@@ -3,629 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>水底寮教會 3/22 野外禮拜程序單</title>
+    <title>歷次週報存檔 - 教會自動化週報</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap');
-
-        :root {
-            --primary:    #a35439;
-            --secondary:  #4b6a48;
-            --text-dark:  #3a332d;
-            --text-light: #736b63;
-            --bg-page:    #f9f6f0;
-            --accent-bg:  #f0ebe0;
-            --line-color: #dfd9cc;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@300;500;700&display=swap');
+        
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-            font-size: 28px;
-            line-height: 1.75;
-            background-color: #c8c2b5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            padding: 3rem 2rem;
-            color: var(--text-dark);
-        }
-
-        @page { size: A4 portrait; margin: 10mm; }
-        @media print {
-            body { background: none; padding: 0; gap: 0; }
-            .page { box-shadow: none; page-break-after: always; margin: 0; }
-            .page:last-child { page-break-after: auto; }
-        }
-
-        /* ===== A4 PAGE ===== */
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            background-image: radial-gradient(var(--accent-bg) 1.8px, transparent 1.8px);
-            background-size: 24px 24px;
-            background-color: var(--bg-page);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-            padding: 10mm 10mm;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .page-inner {
-            background: rgba(253,251,248,0.94);
-            flex: 1;
-            padding: 8mm 9mm;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .page-inner::before, .page-inner::after {
-            content: '';
-            position: absolute;
-            width: 22px; height: 22px;
-            border-color: var(--secondary);
-            border-style: solid;
-        }
-        .page-inner::before { top: 4mm; left: 4mm; border-width: 2.5px 0 0 2.5px; }
-        .page-inner::after  { bottom: 4mm; right: 4mm; border-width: 0 2.5px 2.5px 0; }
-
-        /* ===== HEADER ===== */
-        .main-header {
-            text-align: center;
-            border-bottom: 2.5px solid var(--secondary);
-            padding-bottom: 10px;
-            margin-bottom: 14px;
-        }
-        .main-header h1 {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 36px;
-            font-weight: 900;
-            color: var(--primary);
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-        }
-        .main-header .subtitle {
-            font-size: 20px;
-            color: var(--secondary);
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        /* ===== PAGE SECTION HEADER (for non-cover pages) ===== */
-        .page-header {
-            text-align: center;
-            margin-bottom: 14px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--secondary);
-        }
-        .page-header .page-tag {
-            font-size: 16px;
-            color: var(--secondary);
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-        }
-        .page-header h2 {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 30px;
-            font-weight: 900;
-            color: var(--primary);
-            letter-spacing: 2px;
-        }
-
-        /* ===== INFO BOX ===== */
-        .info-box {
-            background-color: rgba(75,106,72,0.07);
-            border-left: 4px solid var(--primary);
-            padding: 10px 14px;
-            font-size: 22px;
-            line-height: 1.85;
-            margin-bottom: 14px;
-        }
-        .info-row { display: flex; }
-        .info-row strong { width: 90px; flex-shrink: 0; color: var(--primary); }
-
-        /* ===== SECTION TITLE ===== */
-        .section-title {
-            font-family: 'Noto Serif TC', serif;
-            color: var(--secondary);
-            font-size: 24px;
-            font-weight: 900;
-            margin: 12px 0 8px 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            margin: 0;
+            color: #2c3e50;
         }
-        .section-title::before { content: attr(data-icon); font-size: 20px; }
 
-        /* ===== LIST ===== */
-        .list-block {
+        .archive-container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .bulletin-list {
             list-style: none;
-            font-size: 22px;
-            line-height: 1.7;
-            margin-bottom: 10px;
-        }
-        .list-row {
-            display: flex;
-            border-bottom: 1.5px dashed var(--line-color);
-            padding: 5px 0;
-            align-items: baseline;
-        }
-        .list-row:last-child { border-bottom: none; }
-        .col-time   { font-weight: 700; width: 80px; color: var(--primary); flex-shrink: 0; font-size: 22px; }
-        .col-num    { width: 32px; font-size: 14px; color: var(--text-light); flex-shrink: 0; }
-        .col-action { font-weight: 700; width: 110px; flex-shrink: 0; }
-        .col-desc   { flex-grow: 1; color: var(--text-dark); }
-        .sermon-highlight { color: var(--primary); font-weight: 900; font-size: 24px; }
-        .sub-note   { font-size: 18px; color: var(--text-light); }
-
-        /* ===== QUOTE BOX ===== */
-        .quote-box {
-            margin-top: auto;
-            border: 1.5px solid rgba(163,84,57,0.35);
-            padding: 12px 16px;
-            text-align: center;
-            font-family: 'Noto Serif TC', serif;
-            background: rgba(253,251,248,0.95);
-        }
-        .quote-text   { font-size: 20px; line-height: 1.8; font-style: italic; margin-bottom: 6px; }
-        .quote-source { font-size: 16px; color: var(--primary); font-weight: 700; letter-spacing: 1px; }
-
-        /* ===== PAGE LABEL ===== */
-        .page-label {
-            position: absolute;
-            bottom: 3mm; left: 50%;
-            transform: translateX(-50%);
-            font-size: 14px;
-            color: var(--text-light);
-            letter-spacing: 1px;
+            padding: 0;
         }
 
-        /* ===== HYMN TITLE ===== */
-        .hymn-title {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--secondary);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .num-badge {
-            background: var(--secondary);
-            color: white;
-            font-size: 18px;
-            padding: 3px 10px;
-            border-radius: 4px;
+        .bulletin-item {
+            margin-bottom: 15px;
         }
 
-        .verse {
-            margin-bottom: 12px;
-            font-size: 26px;
-            line-height: 1.85;
-        }
-        .verse-num {
-            font-weight: 700;
-            color: var(--primary);
-            margin-right: 4px;
-        }
-        .chorus {
-            background: rgba(75,106,72,0.07);
-            border-left: 4px solid var(--secondary);
-            padding: 8px 14px;
-            margin-top: 6px;
-            margin-bottom: 12px;
-            font-size: 22px;
-            line-height: 1.85;
-            font-style: italic;
-        }
-
-        /* ===== DIVIDER ===== */
-        .divider {
-            height: 1.5px;
-            background: linear-gradient(to right, transparent, var(--line-color), transparent);
-            margin: 14px 0;
-        }
-
-        /* ===== SCRIPTURE ===== */
-        .scripture-ref {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 22px;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .scripture-box {
-            background: rgba(75,106,72,0.05);
-            border: 1.5px solid rgba(75,106,72,0.25);
-            padding: 14px 18px;
-            margin-bottom: 14px;
-            font-size: 26px;
-            line-height: 2.0;
-        }
-
-        /* ===== RESPONSIVE READING ===== */
-        .r-block { margin-bottom: 8px; }
-        .r-lead  { font-size: 24px; line-height: 1.75; color: var(--text-dark); }
-        .r-resp  {
-            font-size: 24px;
-            line-height: 1.75;
-            font-weight: 700;
-            padding-left: 2em;
-            color: var(--text-dark);
+        .bulletin-link {
             display: block;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* ===== EXHIBITION PAGE ===== */
-        .exhibit-title {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 26px;
-            font-weight: 900;
-            color: var(--secondary);
-            margin-bottom: 6px;
-            line-height: 1.4;
-        }
-        .exhibit-meta {
-            font-size: 18px;
-            color: var(--text-light);
-            margin-bottom: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .exhibit-tag {
-            display: inline-block;
-            background: var(--primary);
+        .bulletin-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: #2c3e50;
             color: white;
-            font-size: 15px;
-            padding: 2px 10px;
-            border-radius: 10px;
-            margin-right: 6px;
-        }
-        .tag-ending { background: #c0392b; }
-
-        .exhibit-body {
-            font-size: 24px;
-            line-height: 1.9;
-            color: var(--text-dark);
-            margin-bottom: 12px;
         }
 
-        .exhibit-themes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 8px 0 14px 0;
-        }
-        .theme-chip {
-            background: rgba(75,106,72,0.1);
-            border: 1.5px solid rgba(75,106,72,0.35);
-            color: var(--secondary);
-            font-size: 18px;
-            font-weight: 700;
-            padding: 4px 14px;
-            border-radius: 14px;
+        .date {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-bottom: 5px;
+            font-weight: 400;
         }
 
-        .exhibit-link {
-            background: rgba(163,84,57,0.07);
-            border-left: 5px solid var(--primary);
-            padding: 12px 16px;
-            font-size: 22px;
-            line-height: 1.85;
-            color: var(--text-dark);
-            font-style: italic;
+        .footer {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #7f8c8d;
         }
-        .exhibit-link strong {
-            color: var(--primary);
-            font-style: normal;
-        }
-
     </style>
 </head>
 <body>
-
-<!-- ===== PAGE 1: 封面 + 行程 ===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="main-header">
-            <h1>水底寮教會野外禮拜</h1>
-            <div class="subtitle">探索史前・遇見遊戲中的上帝</div>
-        </div>
-
-        <div class="info-box">
-            <div class="info-row"><strong>日 期：</strong><span>2026 年 3 月 22 日（主日）</span></div>
-            <div class="info-row"><strong>主 理：</strong><span>邵以諾 牧師</span></div>
-            <div class="info-row"><strong>地 點：</strong><span>台東康樂火車站<br>（目的地：台東史前博物館）</span></div>
-        </div>
-
-        <div class="section-title" data-icon="🚂">行程與集合資訊</div>
-
-        <div style="font-size:18px; font-weight:700; color:var(--secondary); margin:6px 0 4px 0; letter-spacing:1px;">🌅 去程</div>
-        <ul class="list-block" style="margin-bottom:10px;">
-            <li class="list-row"><span class="col-time">07:20</span><span class="col-desc"><strong>枋寮火車站</strong> 集合出發</span></li>
-            <li class="list-row"><span class="col-time">07:56</span><span class="col-desc">搭乘 <strong>3003 號 區間快車</strong></span></li>
-            <li class="list-row"><span class="col-time">09:38</span><span class="col-desc">抵達 <strong>台東康樂火車站</strong></span></li>
-            <li class="list-row"><span class="col-time">10:00</span><span class="col-desc">🏕️ <strong>野外禮拜開始</strong></span></li>
-        </ul>
-
-        <div style="font-size:18px; font-weight:700; color:var(--secondary); margin:6px 0 4px 0; letter-spacing:1px;">🌇 回程</div>
-        <ul class="list-block">
-            <li class="list-row"><span class="col-time">14:28</span><span class="col-desc">搭乘 <strong>3028 號 區間快車</strong>（康樂出發）</span></li>
-            <li class="list-row"><span class="col-time">15:49</span><span class="col-desc">🏡 抵達 <strong>枋寮火車站</strong></span></li>
-        </ul>
-
-        <div class="quote-box">
-            <div class="quote-text">「彼時，我佇遐做師傅頭，日日互伊歡喜，常常佇伊面前快樂，也及世間人相及歡喜。」</div>
-            <div class="quote-source">—— 箴言 8:30-31（台語）</div>
-        </div>
-
-        <div class="page-label">— 第 1 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 2: 禮拜程序 ===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">🕊️ 今日禮拜程序</div>
-            <h2>水底寮教會野外禮拜</h2>
-        </div>
-
-        <ul class="list-block">
-            <li class="list-row"><span class="col-num">01</span><span class="col-action">宣 召</span><span class="col-desc">詩篇 96:1-4</span></li>
-            <li class="list-row"><span class="col-num">02</span><span class="col-action">齊唱聖詩</span><span class="col-desc">281《上帝此時臨在》</span></li>
-            <li class="list-row"><span class="col-num">03</span><span class="col-action">祈 禱</span><span class="col-desc">司會</span></li>
-            <li class="list-row"><span class="col-num">04</span><span class="col-action">啟 應</span><span class="col-desc">第 36 篇（箴言 8）</span></li>
-            <li class="list-row"><span class="col-num">05</span><span class="col-action">齊唱聖詩</span><span class="col-desc">547《求主導我及祢同行》</span></li>
-            <li class="list-row" style="align-items:flex-start; padding:6px 0;">
-                <span class="col-num">06</span>
-                <span class="col-action">講道信息</span>
-                <div class="col-desc">
-                    <div class="sermon-highlight">【遊戲中的上帝】</div>
-                    <div class="sub-note">箴言 8:30-31 ／ 邵以諾 牧師</div>
-                </div>
+    <div class="archive-container">
+        <h1>歷次週報存檔</h1>
+        <ul class="bulletin-list">
+            <li class="bulletin-item">
+                <a href="4_05_easter.html" class="bulletin-link">
+                    <span class="date">2026 / 04 / 05</span>
+                    復活節暨省墓禮拜
+                </a>
             </li>
-            <li class="list-row"><span class="col-num">07</span><span class="col-action">祈 禱</span><span class="col-desc">邵以諾 牧師</span></li>
-            <li class="list-row"><span class="col-num">08</span><span class="col-action">奉 獻</span><span class="col-desc">奉獻詩</span></li>
-            <li class="list-row"><span class="col-num">09</span><span class="col-action">齊唱聖詩</span><span class="col-desc">399《願上主大仁愛》</span></li>
-            <li class="list-row"><span class="col-num">10</span><span class="col-action">祝 禱</span><span class="col-desc">邵以諾 牧師</span></li>
-            <li class="list-row"><span class="col-num">11</span><span class="col-action">殿 樂</span><span class="col-desc">報告與博物館參觀動線說明</span></li>
+            <li class="bulletin-item">
+                <a href="4_05_sunrise.html" class="bulletin-link">
+                    <span class="date">2026 / 04 / 05</span>
+                    朝陽禮拜 (Sunrise)
+                </a>
+            </li>
+            <li class="bulletin-item">
+                <a href="3_29_palm_sunday.html" class="bulletin-link">
+                    <span class="date">2026 / 03 / 29</span>
+                    棕樹主日禮拜
+                </a>
+            </li>
+            <li class="bulletin-item">
+                <a href="3_22_field_worship.html" class="bulletin-link">
+                    <span class="date">2026 / 03 / 22</span>
+                    野外禮拜 (康樂火車站)
+                </a>
+            </li>
         </ul>
-
-        <div class="page-label">— 第 2 頁，共 10 頁 —</div>
+        <div class="footer">
+            © 2026 教會自動化週報系統
+        </div>
     </div>
-</div>
-
-<!-- ===== PAGE 3: 聖詩 281 ===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">🎵 今日聖詩歌詞</div>
-            <h2>水底寮教會野外禮拜</h2>
-        </div>
-
-        <div class="hymn-title"><span class="num-badge">281</span>上帝此時臨在</div>
-
-        <div class="verse"><span class="verse-num">1.</span>上帝此時臨在，大家同心敬拜，<br>佇主面前虔誠服事；<br>上帝佇聖殿內，大家恬靜禮拜，<br>心肝專一敬虔跪拜。</div>
-        <div class="chorus">（複歌）真父上帝，信靠祢免掛礙，謳咾祢到萬代。</div>
-
-        <div class="verse"><span class="verse-num">2.</span>上帝永遠存在，彈琴瑟和諧，<br>萬姓萬族圍纍敬拜；<br>哉，聖哉，聖哉！音韻透到天涯，<br>天使聖徒近前服事。</div>
-        <div class="chorus">（複歌）懇求主俯落聽，阮所吟卑微聲，欲謳咾祢尊名。</div>
-
-        <div class="verse"><span class="verse-num">3.</span>懇求萬福源頭，清氣我心齊透，<br>只靠聖主慈悲長流；<br>親像聖使齊齊，看祢燦爛榮耀，<br>互阮謳咾透到父兜。</div>
-        <div class="chorus">（複歌）聖旨意到永遠，萬軍的主臨到，管理聖會做頭。阿們。</div>
-
-        <div class="page-label">— 第 3 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 4: 聖詩 547 ===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">🎵 今日聖詩歌詞</div>
-            <h2>水底寮教會野外禮拜</h2>
-        </div>
-
-        <div class="hymn-title"><span class="num-badge">547</span>求主導我及祢同行</div>
-
-        <div class="verse"><span class="verse-num">1.</span>求主導我及祢同行，謙遜服事人類路途，<br>我學祢有力通擔，一切著磨、艱難、困苦。</div>
-        <div class="verse"><span class="verse-num">2.</span>助我用疼痛的話，夠額感化若石的心；<br>助我阻止自專腳步，導人來信救世福音。</div>
-        <div class="verse"><span class="verse-num">3.</span>互我學祢謙卑吞愞，及祢交陪愈久愈深；<br>相及做工，掃除罪惡，靠主耶穌堅固信心。</div>
-        <div class="verse"><span class="verse-num">4.</span>希望的光大照燦爛，照我頭前的路開闊；<br>救主賞賜真實平安，互我終身為祢來活。阿們。</div>
-
-        <div class="page-label">— 第 4 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 5: 聖詩 399 ===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">🎵 今日聖詩歌詞</div>
-            <h2>水底寮教會野外禮拜</h2>
-        </div>
-
-        <div class="hymn-title"><span class="num-badge">399</span>願上主大仁愛</div>
-        <div class="verse">
-            願上主大仁愛永遠佇你心內，<br>
-            主的疼每時刻及你永同在。<br>
-            主榮光遍照你，用慈悲款待你，<br>
-            主聖神保守你，對此時到永世代。
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section-title" data-icon="📢">宣召經文</div>
-        <div class="scripture-ref">詩篇 96:1-4</div>
-        <div class="scripture-box">
-            你們當向耶和華唱新歌！<br>
-            全地都當向耶和華歌唱！<br>
-            當向耶和華歌唱，稱頌他的名！<br>
-            天天傳揚他的救恩！
-        </div>
-
-        <div class="page-label">— 第 5 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 6: 講道經文 ===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">🌿 今日講道經文</div>
-            <h2>遊戲中的上帝</h2>
-        </div>
-
-        <div class="scripture-ref">箴言 8:30-31（和合本）</div>
-        <div class="scripture-box">
-            那時，我在他那裡為工師，<br>
-            日日為他所喜愛，<br>
-            常常在他面前踴躍，<br>
-            踴躍在他為人預備可住之地，<br>
-            也喜悅住在世人之間。
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="scripture-ref">箴言 8:30-31（台語聖經）</div>
-        <div class="scripture-box">
-            彼時，我佇遐做師傅頭，<br>
-            日日互伊歡喜，<br>
-            常常佇伊面前快樂，<br>
-            佇通徛起的地快樂，<br>
-            也及世間人相及歡喜。
-        </div>
-
-        <div class="page-label">— 第 6 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 7: 啟應文（前半）===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">📜 啟應文</div>
-            <h2>第 36 篇 — 箴言 8</h2>
-        </div>
-        <p style="font-size:18px; color:var(--text-light); margin-bottom:14px; text-align:center;">（一般字體＝司會讀「啟」，<strong>粗體縮排＝會眾應「應」</strong>）</p>
-
-        <div class="r-block"><span class="r-lead">著聽！智慧啲叫；</span><span class="r-resp">聰明啲出聲。</span></div>
-        <div class="r-block"><span class="r-lead">智慧佇路邊高的所在，</span><span class="r-resp">倚仔十字路口。</span></div>
-        <div class="r-block"><span class="r-lead">智慧佇城門口，</span><span class="r-resp">佇人啲出入的所在大聲喝：</span></div>
-        <div class="r-block"><span class="r-lead">眾人啊，我叫恁；</span><span class="r-resp">世間人啊，我對恁講：</span></div>
-        <div class="r-block"><span class="r-lead">戇直的人啊，著學習精明；</span><span class="r-resp">愚戇的人啊，著追求聰明。</span></div>
-        <div class="r-block"><span class="r-lead">著聽，我欲講極好的事，</span><span class="r-resp">欲論正直的代誌。</span></div>
-        <div class="r-block"><span class="r-lead">佇創造的起頭上主先造我；</span><span class="r-resp">自古以來，我是祂頭一個創造的。</span></div>
-        <div class="r-block"><span class="r-lead">佇上起頭，佇創造世界以前，</span><span class="r-resp">對極古早，祂造我。</span></div>
-        <div class="r-block"><span class="r-lead">我出世的時猶未有深淵，</span><span class="r-resp">嘛猶未有海洋。</span></div>
-        <div class="r-block"><span class="r-lead">我出母胎的時，大山猶未受造，</span><span class="r-resp">小山嘛猶未形成。</span></div>
-
-        <div class="page-label">— 第 7 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 8: 啟應文（後半）===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">📜 啟應文（續）</div>
-            <h2>第 36 篇 — 箴言 8</h2>
-        </div>
-
-        <div class="r-block"><span class="r-lead">彼時，大地及田野猶未創造，</span><span class="r-resp">連地上頭一把土粉嘛猶未有，</span></div>
-        <div class="r-block"><span class="r-lead">猶未安置穹蒼，猶未佇海面畫地干線，</span><span class="r-resp">彼時，我已經佇遐。</span></div>
-        <div class="r-block"><span class="r-lead">祂佇空中佈置雲彩，</span><span class="r-resp">互深淵的水泉湧出來，</span></div>
-        <div class="r-block"><span class="r-lead">給海定界限，互海水勿搬過界，給大地下地基，</span><span class="r-resp">彼時，我已經佇遐。</span></div>
-        <div class="r-block"><span class="r-lead">彼時，我佇祂身邊做師傅頭，逐日互祂歡喜。</span><span class="r-resp">我不時佇祂面前歡喜快樂，</span></div>
-        <div class="r-block"><span class="r-lead">意愛祂互人待起的世界，</span><span class="r-resp">歡喜祂創造的世間人。</span></div>
-        <div class="r-block"><span class="r-lead">今，我的子啊，著聽趁我；</span><span class="r-resp">遵行我道路的人真有福氣！</span></div>
-        <div class="r-block"><span class="r-lead">著聽教示來得著智慧，</span><span class="r-resp">咿通拒絕。</span></div>
-        <div class="r-block"><span class="r-lead">聽趁我的人真有福氣！</span><span class="r-resp">個逐日佇我的門口啲等，佇我的門邊啲聽候。</span></div>
-        <div class="r-block"><span class="r-lead">尋著我的人就是尋著性命；</span><span class="r-resp">伊會對上主得著恩惠。</span></div>
-
-        <div class="quote-box" style="margin-top:auto;">
-            <div class="quote-text">「踴躍在他為人預備可住之地，也喜悅住在世人之間。」</div>
-            <div class="quote-source">—— 箴言 8:31</div>
-        </div>
-
-        <div class="page-label">— 第 8 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 9: 特展一（第一浪潮）===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">🏛️ 史前博物館特展介紹</div>
-            <h2>今日探索・特展導覽</h2>
-        </div>
-
-        <div class="exhibit-title">第一浪潮：臺灣原住民族當代時裝藝術展</div>
-        <div class="exhibit-meta">
-            <span><span class="exhibit-tag">展 期</span> 2025/11/11 ～ 2026/5/17</span>
-            <span><span class="exhibit-tag">地 點</span> 康樂本館 第二特展室</span>
-        </div>
-
-        <div class="exhibit-body">
-            台灣原住民族創作者以「時裝」為語言，宣告屬於自己的文化主權。這場展覽匯集 <strong>14 個品牌、28 位設計師，超過 40 件服飾與配件</strong>，以及 5 位人間國寶藝師的精湛工藝，分為四大主題：
-        </div>
-
-        <div class="exhibit-themes">
-            <span class="theme-chip">🌊 共潮生</span>
-            <span class="theme-chip">🌿 從採植開始</span>
-            <span class="theme-chip">👘 衣服的記憶</span>
-            <span class="theme-chip">✂️ 手藝轉生</span>
-        </div>
-
-        <div class="exhibit-body">
-            這不只是一場時裝秀，更是原住民族文化力量的當代宣言——在傳統中尋找當代語言，向時尚主流提出自我主張，展現韌性與未來潛力。
-        </div>
-
-        <div class="exhibit-link">
-            <strong>🔗 與今日講題「遊戲中的上帝」的連結：</strong><br>
-            箴言 8 說智慧在上帝創造世界時「踴躍、快樂、遊戲」。原住民族藝術家也正是這樣——在傳統技法與當代創新之間「遊戲」，讓文化的生命力永不退潮。<strong>每一件服飾，都是智慧在創造中歡喜的見證。</strong>
-        </div>
-
-        <div class="page-label">— 第 9 頁，共 10 頁 —</div>
-    </div>
-</div>
-
-<!-- ===== PAGE 10: 特展二（美式人生）===== -->
-<div class="page">
-    <div class="page-inner">
-        <div class="page-header">
-            <div class="page-tag">🏛️ 史前博物館特展介紹</div>
-            <h2>今日探索・特展導覽</h2>
-        </div>
-
-        <div class="exhibit-title">美式人生：阿美族的傳統山海環境與文化知識</div>
-        <div class="exhibit-meta">
-            <span><span class="exhibit-tag tag-ending">展 期</span> 2025/11/16 ～ 2026/3/29（最後一週！）</span>
-            <span><span class="exhibit-tag">地 點</span> 卑南遺址公園</span>
-        </div>
-
-        <div class="exhibit-body">
-            「<strong>美式</strong>」是阿美族語「Amis」的音譯。這場展覽帶你走進阿美族人在山林、海洋、部落與城市之間的生活世界，分為「<strong>山展場</strong>」與「<strong>海展場</strong>」：
-        </div>
-
-        <div class="exhibit-body" style="padding-left: 1em;">
-            ⛰️ <strong>山展場</strong>：都蘭部落的野菜採集、女性如何承接生活知識、人與菜園的共生關係。<br><br>
-            🌊 <strong>海展場</strong>：北海岸的潮間帶採集、三代相傳的海洋智慧、海廢藝術創作。
-        </div>
-
-        <div class="exhibit-link">
-            <strong>🔗 與今日講題「遊戲中的上帝」的連結：</strong><br>
-            箴言 8 描述上帝創造時有「大地田野、深淵、海洋、穹蒼」——這正是阿美族人世代生活的舞台。他們在上帝創造的世界中與土地共舞，以山海為師，<strong>每一個生活的動作，都是智慧在人間「遊戲」的最好詮釋。</strong>
-        </div>
-
-        <div class="page-label">— 第 10 頁，共 10 頁 —</div>
-    </div>
-</div>
-
 </body>
 </html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水底寮教會 3/29 棕樹主日禮拜程序單</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap');
+
+        :root {
+            --primary:    #8b2f2f; /* Deep red for Palm Sunday/Passion */
+            --secondary:  #2e4d2e; /* Deep green for Palms */
+            --text-dark:  #3a332d;
+            --text-light: #736b63;
+            --bg-page:    #fdfaf5;
+            --accent-bg:  #f2ece4;
+            --line-color: #dfd9cc;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 28px;
+            line-height: 1.75;
+            background-color: #d1cdc4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 3rem 2rem;
+            color: var(--text-dark);
+        }
+
+        @page { size: A4 portrait; margin: 10mm; }
+        @media print {
+            body { background: none; padding: 0; gap: 0; }
+            .page { box-shadow: none; page-break-after: always; margin: 0; }
+            .page:last-child { page-break-after: auto; }
+        }
+
+        /* ===== A4 PAGE ===== */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background-color: var(--bg-page);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            padding: 10mm 10mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-inner {
+            background: rgba(253,251,248,0.96);
+            flex: 1;
+            padding: 12mm 12mm;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid var(--line-color);
+        }
+
+        /* ===== HEADER ===== */
+        .main-header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .main-header h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+        .main-header .subtitle {
+            font-size: 24px;
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        .page-header .page-tag {
+            font-size: 18px;
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .page-header h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 34px;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        /* ===== INFO BOX ===== */
+        .info-box {
+            background-color: rgba(139,47,47,0.05);
+            border-left: 6px solid var(--primary);
+            padding: 15px 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .info-row { display: flex; margin-bottom: 5px; }
+        .info-row strong { width: 100px; flex-shrink: 0; color: var(--primary); }
+
+        /* ===== LIST ===== */
+        .list-block {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        .list-row {
+            display: flex;
+            border-bottom: 1.5px dashed var(--line-color);
+            padding: 8px 0;
+            align-items: baseline;
+        }
+        .list-row:last-child { border-bottom: none; }
+        .col-num    { width: 40px; font-size: 18px; color: var(--text-light); flex-shrink: 0; }
+        .col-action { font-weight: 700; width: 130px; flex-shrink: 0; color: var(--secondary); }
+        .col-desc   { flex-grow: 1; color: var(--text-dark); }
+        .sermon-highlight { color: var(--primary); font-weight: 900; font-size: 30px; }
+        .sub-note   { font-size: 20px; color: var(--text-light); }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            font-family: 'Noto Serif TC', serif;
+            color: var(--secondary);
+            font-size: 28px;
+            font-weight: 900;
+            margin: 15px 0 10px 0;
+            border-left: 8px solid var(--secondary);
+            padding-left: 12px;
+        }
+
+        /* ===== HYMN TITLE ===== */
+        .hymn-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .num-badge {
+            background: var(--primary);
+            color: white;
+            font-size: 20px;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        .verse {
+            margin-bottom: 15px;
+            font-size: 28px;
+            line-height: 1.8;
+        }
+        .verse-num {
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+        /* ===== SCRIPTURE ===== */
+        .scripture-ref {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .scripture-box {
+            background: rgba(139,47,47,0.03);
+            border: 2px solid rgba(139,47,47,0.2);
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            line-height: 1.9;
+        }
+
+        /* ===== RESPONSIVE READING ===== */
+        .r-block { margin-bottom: 10px; }
+        .r-lead  { font-size: 26px; line-height: 1.8; color: var(--text-dark); }
+        .r-resp  {
+            font-size: 26px;
+            line-height: 1.8;
+            font-weight: 700;
+            padding-left: 2em;
+            color: var(--secondary);
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        .page-label {
+            position: absolute;
+            bottom: 5mm; left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .quote-box {
+            margin-top: auto;
+            border-top: 2px solid var(--line-color);
+            padding: 15px 0;
+            text-align: center;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: 封面 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="main-header">
+            <h1>棕樹主日禮拜程序單</h1>
+            <div class="subtitle">和散那！奉主名來的是應當稱頌的！</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-row"><strong>日 期：</strong><span>2026 年 3 月 29 日</span></div>
+            <div class="info-row"><strong>講 題：</strong><span>潔淨聖殿 2.0</span></div>
+            <div class="info-row"><strong>主 理：</strong><span>邵以諾 牧師</span></div>
+            <div class="info-row"><strong>地 點：</strong><span>水底寮教會</span></div>
+        </div>
+
+        <div class="section-title">棕樹主日意義</div>
+        <div class="verse">
+            這一天紀念主耶穌騎驢進耶路撒冷，群眾手拿棕樹枝大聲喝采。這也標誌著聖週（Holy Week）的開始，帶領我們走過受難、死亡，最終迎向復活。
+        </div>
+
+        <div class="quote-box">
+            <div class="verse">
+                「大衛的後裔和散那！佇主的名來的得著謳咾！佇至高的和散那！」
+            </div>
+            <div style="font-size: 20px; color: var(--primary);">—— 馬太福音 21:9</div>
+        </div>
+
+        <div class="page-label">第 1 頁</div>
+    </div>
+</div>
+
+<!-- PAGE 2: 禮拜程序 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="page-header">
+            <div class="page-tag">🕊️ 今日禮拜程序</div>
+            <h2>水底寮教會 棕樹主日</h2>
+        </div>
+
+        <ul class="list-block">
+            <li class="list-row"><span class="col-num">01</span><span class="col-action">奏 樂</span><span class="col-desc">會眾默禱</span></li>
+            <li class="list-row"><span class="col-num">02</span><span class="col-action">宣 召</span><span class="col-desc">詩篇 116:12-14</span></li>
+            <li class="list-row"><span class="col-num">03</span><span class="col-action">奏 樂</span><span class="col-desc">入場詩 86《威嚴君王騎驢進》</span></li>
+            <li class="list-row"><span class="col-num">04</span><span class="col-action">祈 禱</span><span class="col-desc">主理牧師</span></li>
+            <li class="list-row"><span class="col-num">05</span><span class="col-action">啟 應</span><span class="col-desc">37 (箴言 23)</span></li>
+            <li class="list-row"><span class="col-num">06</span><span class="col-action">讚 美</span><span class="col-desc">聖詩 540《主啲叫咱人》</span></li>
+            <li class="list-row" style="align-items:flex-start; padding:10px 0;">
+                <span class="col-num">07</span>
+                <span class="col-action">講道信息</span>
+                <div class="col-desc">
+                    <div class="sermon-highlight">【潔淨聖殿 2.0】</div>
+                    <div class="sub-note">馬太福音 21:1-14 ／ 邵以諾 牧師</div>
+                </div>
+            </li>
+            <li class="list-row"><span class="col-num">08</span><span class="col-action">祈 禱</span><span class="col-desc">會眾同心</span></li>
+            <li class="list-row"><span class="col-num">09</span><span class="col-action">奉 獻</span><span class="col-desc">感恩奉獻</span></li>
+            <li class="list-row"><span class="col-num">10</span><span class="col-action">讚 美</span><span class="col-desc">聖詩 393《謳咾全能恩典主宰》</span></li>
+            <li class="list-row"><span class="col-num">11</span><span class="col-action">祝 禱</span><span class="col-desc">邵以諾 牧師</span></li>
+            <li class="list-row"><span class="col-num">12</span><span class="col-action">殿 樂</span><span class="col-desc">平安散會</span></li>
+        </ul>
+
+        <div class="page-label">第 2 頁</div>
+    </div>
+</div>
+
+<!-- PAGE 3: 聖詩 86 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="page-header">
+            <div class="page-tag">🎵 棕樹節聖詩</div>
+            <h2>威嚴君王騎驢進</h2>
+        </div>
+
+        <div class="hymn-title"><span class="num-badge">86</span>威嚴君王騎驢進前</div>
+
+        <div class="verse"><span class="verse-num">1.</span>威嚴君王騎驢進前，百姓沿路出聲歡迎，<br>路上鋪衫鋪棕樹枝，溫柔救主對遐過去。</div>
+        <div class="verse"><span class="verse-num">2.</span>威嚴君王騎驢進前，謙卑自在向死進行；<br>這是基督凱旋路程，卡贏死失罪惡權柄。</div>
+        <div class="verse"><span class="verse-num">3.</span>威嚴君王騎驢進前，天頂天軍看這情形，<br>顯出悲傷可憐同情，觀看救主面臨犧牲。</div>
+        <div class="verse"><span class="verse-num">4.</span>威嚴君王騎驢進前，最後交戰迫近目前；<br>天父坐佇榮光聖城，啲等祂所抹油聖子。</div>
+        <div class="verse"><span class="verse-num">5.</span>威嚴君王騎驢進前，謙卑自在向死進行，<br>俯頭忍受肉體苦刑，然後上天執掌權柄。</div>
+
+        <div class="page-label">第 3 頁</div>
+    </div>
+</div>
+
+<!-- PAGE 4: 聖詩 540 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="page-header">
+            <div class="page-tag">🎵 願做一盞明燈</div>
+            <h2>主啲叫咱人</h2>
+        </div>
+
+        <div class="hymn-title"><span class="num-badge">540</span>主啲叫咱人做真光的燈</div>
+
+        <div class="verse"><span class="verse-num">1.</span>主啲叫咱人做真光的燈，<br>像親一枝燭火暝時照光明，<br>此世間有烏暗，多多人著躅，<br>咱著照伊光，一人一角。</div>
+        <div class="verse"><span class="verse-num">2.</span>主啲叫咱人歸榮光互祂，<br>咱的光若無明，Bōe互祂歡喜，<br>祂俯落看世間，暗親像烏墨，<br>咱著照伊光，一人一角。</div>
+        <div class="verse"><span class="verse-num">3.</span>主啲叫咱人逐位做光燈，<br>人有罪惡、憂悶，多多心無明，<br>看世間真烏暗，若親像烏墨，<br>咱著照伊光，一人一角。</div>
+
+        <div class="page-label">第 4 頁</div>
+    </div>
+</div>
+
+<!-- PAGE 5: 聖詩 393 + 宣召 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="page-header">
+            <div class="page-tag">🎵 頌讚主宰</div>
+            <h2>謳咾全能恩典主宰</h2>
+        </div>
+
+        <div class="hymn-title"><span class="num-badge">393</span>謳咾全能恩典主宰</div>
+        <div class="verse">
+            謳咾全能恩典主宰，萬族稱呼感謝跪拜；<br>
+            父子聖神，公義仁愛，尊榮、頌讚直到萬代。
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-title">宣召經文</div>
+        <div class="scripture-ref">詩篇 116:12-14</div>
+        <div class="scripture-box">
+            12 耶和華賞賜我一切的大恩我欲用甚麼報答伊？<br>
+            13 我欲捧起救恩的杯，求叫耶和華的名。<br>
+            14 我欲佇伊眾百姓的面前對耶和華謝我的願。
+        </div>
+
+        <div class="page-label">第 5 頁</div>
+    </div>
+</div>
+
+<!-- PAGE 6: 講道經文 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="page-header">
+            <div class="page-tag">📖 今日講道經文</div>
+            <h2>馬太福音 21:1-14</h2>
+        </div>
+
+        <div class="scripture-ref">講題：潔淨聖殿 2.0</div>
+        <div class="scripture-box" style="font-size: 24px;">
+            1. 行近耶路撒冷，到伯法其及橄欖山的時。2. 耶穌差二個學生，給伊講：「恁去對面的鄉社，連鞭會抵著一隻驢縛佇遐，有驢仔及伊佇遐；解開，牽伊來我遮。」<br>
+            3. 若有人給恁講甚麼，就著講：『主欠用伊。』伊連鞭欲送伊來。<br>
+            4. 此個事成是欲應驗早託先知所講的，講：5. 著給郇的查某子講：你的王來就近你，溫柔，閣騎驢，及驢所生的驢仔。<br>
+            6. 學生去照耶穌所吩咐伊的去行，7. 牽驢及驢仔來，將家己的衫舒佇伊頂面，耶穌就上去騎。<br>
+            8. 眾人中卡多將家己的衫舖佇路裡，有的剉樹枝舖佇路裡。9. 前行後隨的眾人喝講：大衛的後裔和散那！佇主的名來的得著謳咾！佇至高的和散那！<br>
+            10. 伊入耶路撒冷，通城搖泏，講：「此個是誰？」11. 眾人講：「此個是先知耶穌，對加利利的拿撒勒來的。」<br>
+            12. 耶穌入上帝的殿，趕出殿內一切買賣的人，捙倒換錢的人的桌，及賣鴿仔的人的椅。13. 給伊講：「有記載講：我的厝欲稱做祈禱的厝，若是恁諸個互伊做賊巢。」14. 睛暝的、跛腳的佇殿裡就近耶穌，伊就醫好伊。
+        </div>
+
+        <div class="page-label">第 6 頁</div>
+    </div>
+</div>
+
+<!-- PAGE 7: 啟應文 37 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="page-header">
+            <div class="page-tag">📜 啟應文</div>
+            <h2>37 (箴言 23)</h2>
+        </div>
+        <p style="font-size:18px; color:var(--text-light); margin-bottom:14px; text-align:center;">（一般字體＝啟，<strong>粗體縮排＝應</strong>）</p>
+
+        <div class="r-block"><span class="r-lead">我的子啊，你的心若有智慧，</span><span class="r-resp">我的心會真歡喜。</span></div>
+        <div class="r-block"><span class="r-lead">你的嘴若講正直，</span><span class="r-resp">我的心會真快樂。</span></div>
+        <div class="r-block"><span class="r-lead">毋通欣羨歹人，</span><span class="r-resp">著不時敬畏上主；</span></div>
+        <div class="r-block"><span class="r-lead">將來一定有向望，</span><span class="r-resp">你的向望袂無去。</span></div>
+        <div class="r-block"><span class="r-lead">我的子啊，著聽，著有智慧，</span><span class="r-resp">嘛著引導你的心行正路。</span></div>
+        <div class="r-block"><span class="r-lead">毋通盤纏佇愛喝酒的人中間，</span><span class="r-resp">抑是愛食肉的人中間。</span></div>
+        <div class="r-block"><span class="r-lead">因為愛飲及愛食的人會變窮，</span><span class="r-resp">愛噃神的人會穿破衫身。</span></div>
+
+        <div class="page-label">第 7 頁</div>
+    </div>
+</div>
+
+<!-- PAGE 8: 啟應文 37 續 -->
+<div class="page">
+    <div class="page-inner">
+        <div class="page-header">
+            <div class="page-tag">📜 啟應文 (續)</div>
+            <h2>37 (箴言 23)</h2>
+        </div>
+
+        <div class="r-block"><span class="r-lead">著聽趁生你的老父；</span><span class="r-resp">你的老母老的時嘛毋通看輕伊。</span></div>
+        <div class="r-block"><span class="r-lead">著買真理，毋通賣；</span><span class="r-resp">嘛著買智慧、教示及明理。</span></div>
+        <div class="r-block"><span class="r-lead">正直的人的老父會大快樂；</span><span class="r-resp">人生著智慧的子會因為伊大歡喜。</span></div>
+        <div class="r-block"><span class="r-lead">著互你的父母歡喜，</span><span class="r-resp">互生你的老母快樂。</span></div>
+        <div class="r-block"><span class="r-lead">我的子啊，著將你的心交付我，</span><span class="r-resp">目睭著注意看我的道路。</span></div>
+
+        <div class="quote-box" style="margin-top:auto;">
+            <div class="verse">
+                「我的子啊，著將你的心交付我，目睭著注意看我的道路。」
+            </div>
+            <div style="font-size: 20px; color: var(--primary);">—— 箴言 23:26</div>
+        </div>
+
+        <div class="page-label">第 8 頁</div>
+    </div>
+</div>
+
+</body>
+</html>
