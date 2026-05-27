@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>水底寮教會高齡牧養轉譯對接手冊</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, 'Noto Sans TC', sans-serif;
+    background: #1A1C23; /* 深灰藍技術風 */
+    color: #D3DAE3;
+    line-height: 1.7;
+    padding: 30px 20px;
+  }
+  
+  /* 頂部快捷導航流 */
+  .nav-bar {
+    max-width: 860px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    gap: 12px;
+    padding: 0 10px;
+  }
+  .nav-btn {
+    text-decoration: none;
+    background: #2E3440;
+    color: #88C0D0;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #3B4252;
+    transition: all 0.2s ease;
+  }
+  .nav-btn:hover { background: #3B4252; color: #ECEFF4; }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto 60px auto;
+    background: #232731;
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid #2E3440;
+    scroll-margin-top: 30px;
+  }
+  .header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid #3B4252; padding-bottom: 25px; }
+  .header-badge {
+    display: inline-block;
+    background: #4C566A;
+    color: #88C0D0;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+  .header-title { font-size: 24px; font-weight: 900; color: #ECEFF4; margin-bottom: 10px; letter-spacing: 0.5px; }
+  .header-subtitle { font-size: 14px; color: #9A9FA5; }
+  
+  h2 { font-size: 18px; color: #88C0D0; margin: 40px 0 18px 0; border-left: 4px solid #81A1C1; padding-left: 12px; font-weight: 700; }
+  p { font-size: 15px; color: #D8DEE9; margin-bottom: 16px; text-align: justify; }
+  strong { color: #EBCB8B; font-weight: 700; }
+  ul { padding-left: 20px; margin-bottom: 16px; }
+  li { font-size: 14px; color: #D8DEE9; margin-bottom: 8px; }
+  
+  /* 💻 電腦版表格基礎設定：嚴格禁止換行與溢出 */
+  table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 14px; background: #2A303C; border-radius: 6px; overflow: hidden; }
+  th { background: #2E3440; color: #88C0D0; padding: 14px 16px; text-align: left; border: 1px solid #3B4252; font-weight: 700; }
+  td { padding: 16px; border: 1px solid #3B4252; vertical-align: top; line-height: 1.6; }
+  tr:nth-child(even) { background: #262B35; }
+  
+  /* 精準鎖定網頁版各表格第一欄寬度 */
+  .meta-table td:first-child { width: 22%; font-weight: 700; color: #EBCB8B; white-space: nowrap; }
+  .frontline-table td:first-child { width: 25%; font-weight: 700; color: #ECEFF4; white-space: nowrap; }
+  .timeline-table td:first-child { width: 20%; font-weight: 700; text-align: center; white-space: nowrap; color: #D8DEE9; }
+  .success-table td:first-child { width: 22%; font-weight: 700; color: #EBCB8B; white-space: nowrap; }
+
+  .blockquote-box { background: #2E3440; border-left: 4px solid #A3BE8C; padding: 22px; margin: 30px 0; border-radius: 0 6px 6px 0; box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); }
+  .blockquote-box p { margin-bottom: 0; color: #ECEFF4; font-size: 14px; }
+  
+  .question-block { background: #2B303C; border: 1px solid #3B4252; padding: 20px; border-radius: 8px; margin-bottom: 16px; }
+  .question-title { font-weight: 700; color: #BF616A; margin-bottom: 8px; font-size: 15px; }
+  .version-badge { display: inline-block; padding: 4px 10px; font-size: 12px; font-weight: 700; border-radius: 4px; }
+  .v1 { background: #4C566A; color: #E5E9F0; }
+  .v2 { background: #5E81AC; color: #ECEFF4; }
+  .v3 { background: #BF616A; color: #ECEFF4; }
+  
+  .divider { text-align: center; color: #4C566A; font-size: 14px; letter-spacing: 6px; margin: 40px 0; font-weight: 700; }
+  .footer-text { text-align: center; margin-top: 40px; font-size: 13px; color: #4C566A; border-top: 1px solid #3B4252; padding-top: 20px; }
+  .nowrap-span { white-space: nowrap; }
+
+  /* 📱 手機端響應式 CSS（只在小螢幕活化，電腦版絕不跑版） */
+  @media screen and (max-width: 768px) {
+    body { padding: 20px 10px; }
+    .container { padding: 35px 20px; }
+    .header-title { font-size: 20px; }
+    h2 { font-size: 16px; }
+    .nav-bar { justify-content: center; width: 100%; }
+    
+    /* 解構表格為上下卡片流 */
+    table, thead, tbody, th, td, tr { display: block; width: 100% !important; }
+    thead { display: none; }
+    tr { margin-bottom: 15px; border: 1px solid #3B4252; border-radius: 6px; background: #2B303C !important; }
+    td { text-align: left !important; border: none !important; padding: 12px 14px !important; white-space: normal !important; }
+    
+    /* 手機卡片首欄特殊高亮樣式 */
+    .meta-table td:first-child, 
+    .frontline-table td:first-child, 
+    .timeline-table td:first-child, 
+    .success-table td:first-child { 
+      background: #2E3440; 
+      color: #88C0D0 !important; 
+      font-size: 13px; 
+      padding-top: 10px !important;
+      padding-bottom: 6px !important;
+    }
+    .version-badge { margin-bottom: 6px; }
+    .nowrap-span { white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="#log-section" class="nav-btn">➔ 先看：討論演變脈絡 (Log)</a>
+  <a href="#spec-section" class="nav-btn">➔ 次看：處境對接規格 (Spec)</a>
+</div>
+
+<div class="container" id="log-section">
+  <div class="header">
+    <div class="header-badge">DOCUMENT 01 // TRAJECTORY LOG</div>
+    <div class="header-title">水底寮教會高齡牧養策略討論演變脈絡書</div>
+    <div class="header-subtitle">DESIGN LOG: THE COGNITIVE DECONSTRUCTION</div>
+  </div>
+
+  <p>本文件系統性梳理了本會在籌備五月底講座時，<strong>整體「事工策略眼光」的解構與演進演變脈絡</strong>。這份記錄旨在向講員隱性敞開本會牧者在決策背後的省思，說明我們是如何從最初盲目追求外在形式的幻覺中清醒，最終透過觀念的刻意鍛鍊，回歸並深扎於扎實的「群體反脆弱原點」。</p>
+
+  <h2>一、 策略演變動態軌跡：三個版本的隱性思辨</h2>
+  <table class="timeline-table">
+    <tr>
+      <td><span class="version-badge v1">第一版思辨</span></td>
+      <td>
+        <strong>事工平移方案：</strong><br>
+        試圖將都市型高強度的「外展事工方案」與讀書會體制直接移植。預設 8-15 人的精緻規模。期待聚會結束時當場產出三個月行動卡，指派同工頭銜職責，強推四大外展推進。
+        <br><br>
+        <span style="color: #BF616A; font-weight: 700;">❌ 反思覺醒（區分方法與信念）：</span><br>
+        我們及時踩了煞車，意識到群體犯了「誤將事工方法當成核心信念」的結構性錯誤。在會眾的觀念尚未徹底改變、且長期服事超載疲乏時，現場催逼計畫本質上依然是建制化的他律控制，催生出的方案終將邁向死亡。
+      </td>
+    </tr>
+    <tr>
+      <td><span class="version-badge v2">第二版思辨</span></td>
+      <td>
+        <strong>去中心化互助網：</strong><br>
+        撤除強制事工卡。改為引導聽眾進行去中心化的「生存、生活、生命互助網絡」自主志願分組，並在現場提供自律檢核題目。
+        <br><br>
+        <span style="color: #BF616A; font-weight: 700;">❌ 深層審計（辨識他律與社交壓力）：</span><br>
+        在我們進一步反思中，發覺這種由堂會高層預設好的題目，在人情味黏稠、高度互信的 20 人鄉村網絡中，會自動啟動「集體凝視的他律框架與隱性重力」。若會眾是為了迎合牧者期待而勾選，那激發的依然是虛假自我。
+      </td>
+    </tr>
+    <tr>
+      <td><span class="version-badge v3">第三版終局</span></td>
+      <td>
+        <strong>原點思維體現：</strong><br>
+        【現況血淋淋更新】：現場擴大為 20 人聚會；同工對醫學內功消化未知；四大外展事工只進行了一梯次就全面停擺、無後續。
+        <br><br>
+        <span style="color: #A3BE8C; font-weight: 700;">✔ 理想調校（聚焦核心生理與靈性代謝）：</span><br>
+        徹底放棄在 2 小時內催生新方案的幻想。回歸「定義問題的能耐」，直擊當時事工斷氣的觀念阻力。散會不分組，留下 15 分鐘冷媒體時間，提問回家想一週。三個月內確定不啟動新方案，真正的反脆弱實驗在於：下一次面對波動時，群體能否學會優雅地進行「事工移除與減量」，保護主體健康。
+      </td>
+    </tr>
+  </table>
+
+  <h2>二、 講座成效的嚴格判定：「是」什麼與「不是」什麼</h2>
+  <ul>
+    <li><strong>成效【會是什麼】：</strong> 是一場聚焦於基層能動性的認知革命。幫助核心同工打通任督二脈，誠實判斷群體的承載量，將醫學知識降維為日常能實作的身體檢測，並在下一次受傷波動來臨時長出取捨的自律肌耐力。</li>
+    <li><strong>成效【絕對不會是什麼】：</strong> 絕對不會複製出一個高認知、高收費、高數位的精裝版讀書會；也絕對不是在 2 小時內變出人力的特效藥，更不會產出一個把退化長輩關在家裡以防跌倒的「無菌且過度保護的脆弱防禦手冊」。</li>
+  </ul>
+
+  <h2>三、 成效級別與成功標準（定調 B 級合格）</h2>
+  <table class="success-table">
+    <tr><td>A 級理想</td><td>聽眾產生高度自覺，主動開始調整自己的生活、飲食與大腦身體實踐（自知、自律、自由）。</td></tr>
+    <tr><td>B 級合格</td><td><strong>現場不生出方案，但產出群體的共同語言、問題清單與承載量判斷。</strong> 誠實承認目前到底是缺方案、缺人力、還是缺重新看見人的眼光。</td></tr>
+    <tr><td>假成功</td><td>大家說很感動、很豐富，但散會後沒有留下任何記錄、問題或自覺。只剩一時情緒，沒有留下可供生命承接的材料。</td></tr>
+  </table>
+
+  <div class="blockquote-box">
+    <p><strong>核心靈魂金句：</strong>「不怕失智，不是保證不會失去記憶；而是相信即使記憶失落，人仍然不該被遺忘。水底寮這場講座不是要證明我們能做大事，而是要測試：我們能不能在不壓垮人的情況下，重新開始記得幾個人的名字。」</p>
+  </div>
+</div>
+
+<div class="divider">◆ MELETĒ // ISOMORPHIC BOUNDARY ◆</div>
+
+<div class="container" id="spec-section">
+  <div class="header">
+    <div class="header-badge">DOCUMENT 02 // SPECIFICATION</div>
+    <div class="header-title">水底寮教會高齡牧養處境對接規格書 (V2.2)</div>
+    <div class="header-subtitle">致講員：吳明漢牧師 —— 基於村落真實土壤的對話邊界</div>
+  </div>
+
+  <p><strong>明漢牧師平安：</strong></p>
+  <p>在您詳閱了上方的「策略討論演變脈絡（Log）」後，以下是為您梳理出的具體對接考題。本會翻轉傳統事工追求完美計畫的他律框架，決定不向同工施加額外重力，請您調配 <strong>60% 的時間</strong> 面對以下村落現場的粗糙現實：</p>
+
+  <h2>一、 拓樸基礎：本會真實基本盤與硬約束</h2>
+  <table class="meta-table">
+    <tr><td>聚會定位</td><td>預計約有 <strong>20 人左右</strong> 的中型聚會。群體已從少數核心同工，擴大至包含一般信徒與社區長輩。</td></tr>
+    <tr><td>同工真實狀態</td><td>核心服事人力（多為女性長執）長期超載、服事疲乏，近年更是<strong>同工老齡化、傷兵不斷、傷痕累累</strong>。</td></tr>
+    <tr><td>心肺負荷約束</td><td><strong>【硬性約束】</strong>基於同工目前的心理與生理代謝承載量，本次講座<strong>絕對不催生任何「每週新增額外時間負荷」的新事工方案</strong>。</td></tr>
+    <tr><td>長者大腦現況</td><td>村落長輩教育程度與習慣不同，無法進行高密度的醫學專書共讀；需要轉譯為體感、日常實作與冷媒體的生命留白。</td></tr>
+  </table>
+
+  <h2>二、 內功底蘊校正：關於徐文俊醫師全人照護模型</h2>
+  <p>必須向您誠實報告：本會雖有同工曾參與過徐文俊醫師的「失智症全人照護與靈性醫學」課程，但<strong>「實際上吸收消化了多少，目前仍是未知數」</strong>。同工可能聽過部分名詞，但尚未在日常中體現為操作技術。請您將我們的底蘊視為初級應用的原點：</p>
+  <ul>
+    <li><strong>關係疾病的解碼：</strong> 明白退化會單向破壞四維度關係（自己、神、家人、集體），核心在於透過靈性關懷重建連結。</li>
+    <li><strong>ABC 行為與杏仁核：</strong> 學習將疑似失智長輩的異常行為（BPSD）視為溝通，如何退一步看清先行事件（A）以安撫杏仁核。</li>
+    <li><strong>失去的藝術（裂痕茶葉蛋）：</strong> 接受能力與記憶逐步失去的真實老化，明白「容器有裂痕，光才能進去」的不完美哲學。</li>
+  </ul>
+
+  <h2>三、 土壤診斷：只進行了一梯次就停擺的四個外展事工</h2>
+  <p>我們曾嘗試在成人主日學後推動外展，然而，現實的環境阻力極其殘酷：<strong>「向土地報佳音（街道清潔）、向安養機構報佳音、向單親家庭報佳音、向幼兒園親子報佳音，這四個事工在進行了一梯次之後，目前全部停擺，沒有後續了。」</strong></p>
+  <p>這證實了我們的系統在外源重力下極其脆弱。<strong>我們不需要您教我們如何重啟這四個死手，我們需要您幫我們診斷當時觀念的阻力在哪裡？</strong></p>
+
+  <h2>四、 去泡沫化質詢：5 個在地實踐考題</h2>
+  <div class="question-block">
+    <div class="question-title">Q1. 沒人力、沒後續、消化未知，水底寮的「無知之知」起手式是什麼？</div>
+    <p>面對同工對醫學內功消化未知、外展事工全面停擺的尷尬現狀，我們該如何跨出自我牧養的第一步？在群體連「定義問題的能耐」都缺乏時，您如何引導我們釐清目前的位置？</p>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">Q2. 面對20位包含社區長輩的現場，如何把預防醫學知識進行日常日常降維？</div>
+    <p>現場有多位不擅閱讀的村落長輩。您如何不使用艱澀的學術專有名詞，而是將預防慢性病、脂質代謝、心肺健康（彈性血壓）的科學知識，降維轉譯為農村長輩日常飲食的油鹽檢視，或農作後的血壓監測等「身體實踐」？</p>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">Q3. 如何在「事工全面停擺」的挫折陰影中，安撫同工的杏仁核？</div>
+    <p>外展事工卡在一梯次便斷氣，讓原本疲乏的核心同工產生了極大的挫折感（高皮質醇環境）。在信徒皆祭司的去建制牧養中，如何引導同工不把問題外源化、不陷入責怪或硬撐，而是對這場「停擺的實踐」產生自我解釋的興趣？</p>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">Q4. 在高互信、人情味黏稠的20人農村聚會中，如何優雅地守住專業陪伴的邊界？</div>
+    <p>農村充滿人情味，但也容易因為界線模糊而導致外源性重力過載。堂會在面對疑似退化或失智的長輩家庭時，如何提供去中心化的靈性承接，同時精準守住醫療與長照個管評估的科學防禦邊界？</p>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">Q5. 容許失敗與代價：什麼是水底寮教會此時此刻真正的「反脆弱」？</div>
+    <p>如果我們在三個月內<strong>「確定不啟動、不重啟任何高齡牧養與宣教事工」</strong>，您建議我們該如何將反脆弱的思想，落實為核心同工在面對下一次波動（如同工陸續受傷、司琴請假）時的「事工減量與取捨技術」？</p>
+  </div>
+
+  <div class="blockquote-box" style="border-left-color: #5E81AC;">
+    <p style="color: #D8DEE9; font-style: normal;">如果今天還做不出方案，那至少讓我們不要急著假裝自己做得到；讓我們先誠實承認，上帝也許不是要我們立刻多做一件事，而是先重新學會看見那些正在老去、正在照顧、也正在疲累的人。</p>
+  </div>
+
+  <div class="footer-text">
+    屏東中會水底寮教會 邵以諾牧師 敬邀｜2026年5月
+  </div>
+</div>
+
+</body>
+</html>

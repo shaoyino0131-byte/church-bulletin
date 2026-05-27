@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>會前簡要報告書｜水底寮教會「如何預備不怕失智的未來？」</title>
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --paper: #ffffff;
+      --ink: #222222;
+      --muted: #666666;
+      --line: #ded8cb;
+      --accent: #6b5ce7;
+      --accent-soft: #eeebff;
+      --green: #168a53;
+      --green-soft: #e6f6ee;
+      --amber: #b7791f;
+      --amber-soft: #fff4dc;
+      --red: #b8325b;
+      --red-soft: #ffe7ef;
+      --blue: #1b73a8;
+      --blue-soft: #e7f3fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+    .cover {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f6ff 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 38px 38px 34px;
+      box-shadow: 0 12px 30px rgba(40, 35, 20, 0.06);
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin: 0 0 10px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 18px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: #777;
+      font-size: 13px;
+    }
+    .meta span {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px 28px;
+      margin: 20px 0;
+      box-shadow: 0 8px 18px rgba(40, 35, 20, 0.035);
+    }
+    h2 {
+      font-size: 22px;
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h3 {
+      font-size: 17px;
+      margin: 20px 0 8px;
+    }
+    p { margin: 8px 0; }
+    ul { margin: 8px 0 0 22px; padding: 0; }
+    li { margin: 5px 0; }
+    .lead {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2a2a2a;
+    }
+    .quote {
+      border-left: 5px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin: 14px 0;
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: #fff;
+    }
+    .card strong { display: block; margin-bottom: 6px; }
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-right: 6px;
+    }
+    .tag-red { background: var(--red-soft); color: var(--red); }
+    .tag-green { background: var(--green-soft); color: var(--green); }
+    .tag-blue { background: var(--blue-soft); color: var(--blue); }
+    .tag-amber { background: var(--amber-soft); color: var(--amber); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 11px 12px;
+      border-bottom: 1px solid #eee9df;
+    }
+    th {
+      color: #555;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      background: #faf8f4;
+    }
+    .timeline {
+      counter-reset: step;
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: white;
+      font-weight: 900;
+    }
+    .step div {
+      padding: 3px 0 12px;
+      border-bottom: 1px dashed #e4ded3;
+    }
+    .warning {
+      background: var(--amber-soft);
+      border-left: 5px solid var(--amber);
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-top: 14px;
+    }
+    .success {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green);
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-top: 14px;
+    }
+    .footer {
+      color: #777;
+      text-align: center;
+      font-size: 13px;
+      margin-top: 28px;
+    }
+    @media (max-width: 720px) {
+      .cover, section { padding: 24px 20px; }
+      h1 { font-size: 26px; }
+      .grid { grid-template-columns: 1fr; }
+      table { font-size: 14px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; padding: 0; }
+      .cover, section { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="cover">
+      <div class="badge">會前簡要報告書</div>
+      <h1>水底寮教會五月底講座<br>「如何預備不怕失智的未來？」</h1>
+      <p class="subtitle">給牧師、長執與同工的會前理解版本</p>
+      <div class="meta">
+        <span>用途：講座前共識整理</span>
+        <span>版本：簡要版 v1</span>
+        <span>焦點：不壓垮同工的 90 天試行</span>
+      </div>
+    </div>
+
+    <section>
+      <h2>一、這場講座真正要處理什麼？</h2>
+      <p class="lead">這場講座不是單純增加失智症知識，也不是要複製臨安教會的完整模式。</p>
+      <div class="quote">真正的問題是：水底寮教會如何在外展停滯、探訪低動能、同工疲乏的現況中，用一個很小、很低壓、三個月內做得到的方式，重新開始關懷高齡者與照顧者？</div>
+      <p>因此，這場講座的核心不是「聽完很感動」，而是幫助教會辨識：我們現在是缺方案、缺人力、缺信心，還是缺一種重新看見長者與照顧者的眼光。</p>
+    </section>
+
+    <section>
+      <h2>二、目前已知的水底寮處境</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="tag tag-red">現況</span>
+          <strong>對外關懷動能不足</strong>
+          <p>目前對外關懷與宣教事工沒有穩定持續運作，家庭探訪意願偏低，常需要長老逐戶詢問。</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-amber">限制</span>
+          <strong>不能再增加同工重擔</strong>
+          <p>新方案不能靠少數核心同工硬撐，也不宜每週增加固定負擔。</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-blue">火種</span>
+          <strong>青少年行動曾經出現</strong>
+          <p>撿煙蒂、琉球生活營、淨灘等經驗顯示教會仍有行動火種，但尚未形成穩定節奏。</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-green">資源</span>
+          <strong>已有失智照護基礎</strong>
+          <p>同工曾上過徐文俊醫師課程，已初步接觸失智症全人照護與靈性醫學框架。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>三、我們從討論中修正了什麼？</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>原本想法</th>
+            <th>發現的漏洞</th>
+            <th>修正方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>把臨安教會經驗轉譯到水底寮</td>
+            <td>可能變成聽成功案例，卻無法落地。</td>
+            <td>請吳牧師分享「臨安經驗的最小可行版本」。</td>
+          </tr>
+          <tr>
+            <td>青銀同行、社區健康走讀</td>
+            <td>和失智主題連結較間接，也可能讓青少年承擔過重。</td>
+            <td>青少年改為選配角色，不作為第一階段成敗條件。</td>
+          </tr>
+          <tr>
+            <td>安養機構陪伴小隊</td>
+            <td>容易被聽成又多一個新事工。</td>
+            <td>改成「90 天陪伴試行」，強調測試，不是成立新事工。</td>
+          </tr>
+          <tr>
+            <td>講座後再找人推動</td>
+            <td>很可能沒有人接，行動卡失效。</td>
+            <td>講座前先預邀召集人、紀錄者與可行場域。</td>
+          </tr>
+          <tr>
+            <td>期待講座產出行動方案</td>
+            <td>若教會真的沒有力氣，硬推反而造成壓力。</td>
+            <td>接受 B 級成功：共同語言、問題清單、承載量判斷。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>四、目前建議的主策略</h2>
+      <div class="quote">策略名稱：<br>「記得你ê名：90 天陪伴試行」</div>
+      <p><strong>核心目標：</strong>不新增大型事工，而是在 90 天內測試：水底寮教會能不能用最低負擔，重新建立一個穩定、具名、有紀錄的高齡陪伴節奏。</p>
+      <h3>每次行動只做四件事</h3>
+      <ul>
+        <li><strong>稱名：</strong>叫出長者的名字，不把人當成模糊的「老人」。</li>
+        <li><strong>聽故事：</strong>只問一個簡單問題，聽一小段生命故事。</li>
+        <li><strong>留祝福：</strong>用一句話祝福對方仍被上帝記念。</li>
+        <li><strong>記回饋：</strong>回來記錄今天認識誰、聽見什麼、學到什麼。</li>
+      </ul>
+      <div class="warning"><strong>重要邊界：</strong>本試行不做診斷、不做照護指導、不處理醫療決策；只做陪伴、傾聽、記錄與必要時轉介。</div>
+    </section>
+
+    <section>
+      <h2>五、講座前、中、後要完成什麼？</h2>
+      <div class="timeline">
+        <div class="step"><div><strong>講座前</strong><br>預邀 1 位 90 天召集人、1 位紀錄者，並確認 A 場域：安養機構；B 場域：照顧者低壓力茶敘。</div></div>
+        <div class="step"><div><strong>講座前</strong><br>寄給吳牧師 2 頁處境簡報，請他回應水底寮的真實限制，而不是只介紹臨安完整模式。</div></div>
+        <div class="step"><div><strong>講座中</strong><br>請吳牧師協助判斷：臨安經驗哪個核心最適合水底寮？我們提出的試行會不會太重？什麼情況下應該停止？</div></div>
+        <div class="step"><div><strong>講座中</strong><br>完成一張 90 天行動卡：目標、對象、時間、負責人、場域、第一次日期、停止條件。</div></div>
+        <div class="step"><div><strong>講座後 90 天</strong><br>每月一次，連續三次；三次後召開一次檢討會，決定延續、改版或停止。</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>六、如果講座後沒有行動方案，還有價值嗎？</h2>
+      <p>有。只是那時候不能再把成功定義為「啟動事工」，而要改成以下三種價值：</p>
+      <div class="grid">
+        <div class="card">
+          <span class="tag tag-blue">診斷價值</span>
+          <strong>誠實看見教會承載量</strong>
+          <p>也許我們不是缺方案，而是目前真的沒有力氣承擔新事工。</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-green">語言價值</span>
+          <strong>改變談失智的方式</strong>
+          <p>失智不只是醫療問題，也是關係問題；教會不能診斷，但可以陪伴。</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-amber">火種價值</span>
+          <strong>讓照顧者不再孤單</strong>
+          <p>即使沒有方案，若有人感到被理解，仍然有牧養價值。</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-red">警戒</span>
+          <strong>避免假成功</strong>
+          <p>最要避免的是大家說「很感動、很豐富」，但沒有留下問題、紀錄與反省。</p>
+        </div>
+      </div>
+      <div class="success"><strong>B 級成功定義：</strong>即使沒有行動方案，也至少留下共同語言、問題清單、承載量判斷。</div>
+    </section>
+
+    <section>
+      <h2>七、講座成功標準</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>層級</th>
+            <th>成功定義</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>A 級成功</strong></td>
+            <td>產出 90 天行動卡，確認召集人、第一次日期、場域與停止條件。</td>
+          </tr>
+          <tr>
+            <td><strong>B 級成功</strong></td>
+            <td>沒有行動方案，但產出共同語言、問題清單與教會承載量判斷。</td>
+          </tr>
+          <tr>
+            <td><strong>C 級成功</strong></td>
+            <td>至少讓長者家屬或照顧者感到被理解，讓教會知道這議題不能只當外部專題。</td>
+          </tr>
+          <tr>
+            <td><strong>假成功</strong></td>
+            <td>大家覺得感動，但沒有任何紀錄、問題、決定或誠實反省。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>八、最後共識句</h2>
+      <div class="quote">水底寮這場講座不是要證明我們能做大事，而是要測試：我們能不能在不壓垮人的情況下，重新開始記得幾個人的名字。</div>
+      <p>若能做到，這就是行動的開始。若暫時做不到，也至少讓我們誠實看見：上帝也許不是要我們立刻多做一件事，而是先重新學會看見那些正在老去、正在照顧、也正在疲累的人。</p>
+    </section>
+
+    <div class="footer">水底寮教會「如何預備不怕失智的未來？」會前簡要報告書｜供牧師、長執與同工會前閱讀</div>
+  </main>
+</body>
+</html>

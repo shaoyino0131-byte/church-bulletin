@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>問題規格書｜水底寮教會「如何預備不怕失智的未來？」講座設計</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, 'Noto Sans TC', sans-serif;
+    background: #F7F6F3;
+    color: #1A1A1A;
+    line-height: 1.6;
+    padding: 40px 0;
+  }
+  .page {
+    width: 794px;
+    margin: 0 auto;
+    padding: 40px 48px;
+  }
+  .header { text-align: center; margin-bottom: 36px; }
+  .header-badge {
+    display: inline-block;
+    background: #EEEBFF;
+    color: #6B5CE7;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .header-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .header-subtitle {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .header-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: #888;
+  }
+  .header-meta span { display: inline-flex; align-items: center; gap: 4px; }
+  .section { margin-bottom: 28px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .section-label { display: flex; flex-direction: column; }
+  .section-num { font-size: 12px; color: #999; font-weight: 600; }
+  .section-title { font-size: 20px; font-weight: 700; color: #1A1A1A; }
+  .section-box {
+    background: #fff;
+    border: 1px solid #E0DCD6;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .sub-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+  .sub-block { margin-bottom: 14px; }
+  .sub-block:last-child { margin-bottom: 0; }
+  .sub-text { font-size: 15px; color: #333; }
+  .item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #F0EEEA;
+  }
+  .item-row:last-child { border-bottom: none; }
+  .item-text { flex: 1; font-size: 15px; color: #333; }
+  .label-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 6px;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+  .badge-p1 { background: #FFE0EC; color: #D63384; }
+  .badge-p2 { background: #FFF3D6; color: #D4900A; }
+  .badge-p3 { background: #D6F0FF; color: #0D7FBF; }
+  .code-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #F0EEEA;
+    color: #666;
+    margin-right: 2px;
+    font-family: system-ui, monospace;
+    flex-shrink: 0;
+  }
+  .pain-num, .num-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .pain-num { background: #FFE0EC; color: #D63384; }
+  .num-circle { background: #D6FFE8; color: #0A8A4A; }
+  .arrow { color: #0D7FBF; font-weight: 700; margin: 0 6px; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .compare-table th {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #999;
+    font-weight: 600;
+    border-bottom: 2px solid #E0DCD6;
+  }
+  .compare-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #F0EEEA;
+    color: #333;
+    vertical-align: top;
+  }
+  .compare-table tr.recommended { background: #F5F3FF; }
+  .compare-table tr.recommended td:first-child::after {
+    content: ' ★ 推薦';
+    color: #6B5CE7;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .timeline {
+    border-left: 2px solid #E0DCD6;
+    margin-left: 15px;
+    padding-left: 20px;
+  }
+  .step {
+    padding: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #6B5CE7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-left: -31px;
+  }
+  .step-content { flex: 1; }
+  .step-title { font-weight: 700; font-size: 15px; color: #1A1A1A; }
+  .step-desc { font-size: 13px; color: #777; margin-top: 2px; }
+  .note-box {
+    background: #F5F3FF;
+    border-left: 4px solid #6B5CE7;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    margin-top: 12px;
+  }
+  .mini-list { padding-left: 20px; margin-top: 6px; }
+  .mini-list li { margin: 4px 0; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { width: 100%; padding: 24px 32px; }
+    .section-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-badge">🧠 #問對問題｜講座設計規格</div>
+    <div class="header-title">問題規格書</div>
+    <div class="header-subtitle">水底寮教會五月底講座：「如何預備不怕失智的未來？」｜從精彩演講轉向不壓垮人的重新開始</div>
+    <div class="header-meta">
+      <span>📅 產生時間：2026-05-21</span>
+      <span>📊 問題層級：事工設計／社區牧養</span>
+      <span>🔀 複雜度：中高</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFE0EC;color:#D63384;">⚠️</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 01</span>
+        <span class="section-title">問題定義</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="sub-block">
+        <div class="sub-label">現況</div>
+        <div class="sub-text">水底寮教會位於屏東枋寮鄉，長期面對城鄉差距、人口外移、少子化、教會同工疲乏與事工斷層。雖然近年曾嘗試從一次性活動轉向長期關懷運動，包括土地、安養機構、單親家庭與幼兒園親子的關懷，但目前對外關懷與宣教事工已經沒有穩定持續運作。家庭探訪意願偏低，探訪需要長老逐戶詢問與邀請，參與者興致不足。淨街打掃曾轉化為青少年培力，例如帶領青少年執行撿煙蒂計畫，並將獎助金用於琉球生活營、完成浮潛夢想並順帶淨灘；然而這些行動尚未形成後續計畫、固定節奏或跨世代事工路徑。教會同工前陣子已上過徐文俊醫師的失智症全人照護與靈性醫學課程，具備初步醫學與靈性照護框架；五月底預計邀請吳明漢牧師分享臨安教會如何以知識賦權、反脆弱、自我牧養與跨世代共學來預備高齡社會。最新策略討論進一步確認：這場講座不是單純追求產出新事工，而是要成為診斷場域，協助教會判斷目前是缺方案、缺人力、缺信心，還是缺重新看見長者與照顧者的眼光。</div>
+      </div>
+      <div class="sub-block">
+        <div class="sub-label">5 Whys 根因分析</div>
+        <div class="sub-text">為什麼需要設計更接地氣的講座？因為若只聽臨安教會的成功經驗，水底寮同工可能難以轉譯到目前已停滯的鄉村處境。為什麼難以轉譯？因為臨安教會具備城市型知識課程、學院資源與社區網絡，水底寮則面對人口外移、同工不足、對外關懷中斷、家庭探訪動能低落與在地長者照護壓力。為什麼這會影響講座果效？因為聽眾不是只需要知道「可以做什麼」，而是需要重新相信「我們做得到，而且第一步不會壓垮我們」。為什麼這份相信不容易產生？因為過去曾有淨街、青少年撿煙蒂、琉球生活營與淨灘等行動，但缺少後續節奏、角色分工與事工敘事，導致行動沒有累積成教會共同方向。根本原因：這場講座的核心問題不是「邀請講員分享什麼」，而是「如何把外部典範轉譯成水底寮教會能重新啟動、低門檻、三個月內不壓垮同工的在地高齡與跨世代牧養實驗」。</div>
+      </div>
+      <div class="sub-block">
+        <div class="sub-label">痛點</div>
+        <div class="item-row"><span class="pain-num">①</span><span class="item-text">內容落差：臨安教會的「高認知共讀與健康識能」模式，可能與水底寮長者的教育程度、交通距離、數位能力與閱讀習慣產生落差。</span></div>
+        <div class="item-row"><span class="pain-num">②</span><span class="item-text">動能落差：水底寮目前對外關懷與宣教事工沒有穩定持續運作，家庭探訪意願偏低，若講座後直接新增事工，可能只讓少數長老與核心同工再次承擔推動壓力。</span></div>
+        <div class="item-row"><span class="pain-num">③</span><span class="item-text">延續落差：淨街、撿煙蒂、青少年琉球生活營與淨灘已展現可貴火種，但尚未形成下一步計畫；若未接上高齡照護與社區關懷，講座容易成為另一個資訊豐富但行動鬆散的一次性活動。</span></div>
+      </div>
+      <div class="note-box"><strong>對講員與核心同工的設計問題：</strong>水底寮教會能否在不增加固定事工負擔的前提下，用 90 天測試一個最低負擔的高齡陪伴節奏，並判斷目前是缺方案、缺人力、缺信心，還是缺重新看見長者與照顧者的眼光？<br><br><strong>講座現場的行動問題：</strong>我們願不願意在接下來 90 天，每月一次，用最小負擔，具名陪伴幾位長者或照顧者，並在三個月後誠實判斷要延續、改版或停止？</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFF3D6;color:#D4900A;">🎯</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 02</span>
+        <span class="section-title">目標</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="item-row"><span class="label-tag badge-p1">P1</span><span class="item-text">講座前提供吳牧師一份「水底寮處境簡報」，包含教會現況、同工限制、既有關懷事工、徐醫師課程基礎與希望被回應的 5 個在地問題。</span></div>
+      <div class="item-row"><span class="label-tag badge-p1">P1</span><span class="item-text">講座中讓吳牧師至少用 60% 時間回應水底寮處境，而不是只介紹臨安教會完整模式。</span></div>
+      <div class="item-row"><span class="label-tag badge-p1">P1</span><span class="item-text">講座結束前完成「A/B 兩層成果判斷」：A 級成果是產出 1 張 90 天行動卡，含召集人、紀錄者、場域、第一次行動日期與停止條件；B 級成果是未啟動行動，但留下共同語言、問題清單與教會承載量判斷。</span></div>
+      <div class="item-row"><span class="label-tag badge-p2">P2</span><span class="item-text">讓參與者理解徐醫師的「失智症是關係的疾病」與吳牧師的「知識賦權／反脆弱」可互補：前者處理照護與關係修復，後者處理預防、共學與群體韌性。</span></div>
+      <div class="item-row"><span class="label-tag badge-p2">P2</span><span class="item-text">邀請至少 5 位非固定同工的會友、照顧者、長者家屬或社區夥伴參與，避免講座只落在原本已疲乏的核心同工身上。</span></div><div class="item-row"><span class="label-tag badge-p2">P2</span><span class="item-text">把講座語言分成兩層：內部策略語言用於牧師、核心同工與講員；現場行動語言用於一般會友、長者家屬與照顧者。</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFE0EC;color:#D63384;">🚫</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 03</span>
+        <span class="section-title">限制條件</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="item-row"><span class="code-tag">CN-01 行為／文化</span><span class="item-text">鄉村長者與家庭照顧者未必習慣以「讀書會、專書共讀、線上課程」形式學習；講座設計必須把臨安模式轉成故事、問答、案例演練與短期陪伴。</span></div>
+      <div class="item-row"><span class="code-tag">CN-02 資源</span><span class="item-text">水底寮教會同工有限，且能穩定參與學習與服事者集中於少數人；新方案不得要求每週新增 2 小時以上的固定同工負荷，且不得以長老逐戶詢問作為主要動員方式。</span></div>
+      <div class="item-row"><span class="code-tag">CN-03 地理／人口</span><span class="item-text">枋寮鄉人口外移與高齡化使參與者動員不易；方案必須能服務小規模聚會，例如 8 至 15 人，而非預設城市教會 20 至 50 人課程規模。</span></div>
+      <div class="item-row"><span class="code-tag">CN-04 專業邊界</span><span class="item-text">教會不能取代醫師診斷、長照個管師評估或專業照護服務；講座中需清楚區分「醫療轉介」、「家庭陪伴」、「靈性關懷」與「教會共學」。</span></div><div class="item-row"><span class="code-tag">CN-05 決策場景</span><span class="item-text">同一個問題不能直接用同一套語言對所有人說明；給講員與核心同工的問題可以是策略診斷，給講座現場的問題必須轉成「每月一次、少數人、記得名字、留下紀錄」的行動語言。</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#D6F0FF;color:#0D7FBF;">🔧</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 04</span>
+        <span class="section-title">障礙</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="item-row"><span class="code-tag">OB-01</span><span class="item-text">講員資訊不足：吳牧師若只知道題目，不知道水底寮教會的歷史精神、同工疲乏、向安養機構報佳音等脈絡，就難以設計在地回應<span class="arrow">→</span>影響講座內容精準度與後續行動率。</span></div>
+      <div class="item-row"><span class="code-tag">OB-02</span><span class="item-text">聽眾問題未先蒐集：會友、長者家屬、長執與社區夥伴對失智症的焦慮不同，若未分類，講座問答容易被零散問題牽動<span class="arrow">→</span>影響時間使用與共識形成。</span></div>
+      <div class="item-row"><span class="code-tag">OB-03</span><span class="item-text">既有學習未轉譯：徐醫師課程提供醫學與靈性照護框架，但尚未轉成水底寮教會可執行的關懷流程<span class="arrow">→</span>影響同工從「聽懂」到「會做」的轉換。</span></div>
+      <div class="item-row"><span class="code-tag">OB-04</span><span class="item-text">缺少講後承接機制：淨街、撿煙蒂、琉球生活營與淨灘已證明教會能產生行動，但若沒有三個月實驗、負責人、檢核日期與停止條件，新的講座仍會停留在啟發層次<span class="arrow">→</span>影響事工延續性與會友信任。</span></div><div class="item-row"><span class="code-tag">OB-05</span><span class="item-text">把診斷誤認為失敗：若講座後沒有行動方案，容易被視為無效；但在目前承載量不足時，誠實留下共同語言、問題清單與暫緩判斷，本身就是避免假成功的成果<span class="arrow">→</span>影響教會能否用真實狀態做下一步決策。</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#D6FFE8;color:#0A8A4A;">✅</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 05</span>
+        <span class="section-title">成功標準</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="item-row"><span class="num-circle">①</span><span class="item-text">講座前 7 天完成並寄出 2 頁講員簡報，內容含水底寮教會處境、徐醫師課程摘要、5 個在地提問與期待的講座產出。</span></div>
+      <div class="item-row"><span class="num-circle">②</span><span class="item-text">講座當天參與者至少 20 人；其中至少 5 人不是現任長執或固定核心同工。</span></div>
+      <div class="item-row"><span class="num-circle">③</span><span class="item-text">講座中完成至少 3 個水底寮案例討論，例如：安養機構陪伴、疑似失智長者家庭探訪、長者健康共學小聚。</span></div>
+      <div class="item-row"><span class="num-circle">④</span><span class="item-text">A 級成功：講座結束前產出 1 張「90 天行動卡」，列出目標、對象、時間、召集人、紀錄者、合作場域、第一次行動日期、第一次檢討日期與停止條件。</span></div>
+      <div class="item-row"><span class="num-circle">⑤</span><span class="item-text">B 級成功：若講座後無法產出 90 天行動卡，仍需留下 1 句共同語言、至少 5 個問題清單、1 份承載量判斷，並明確記錄「暫緩、改版或等待條件成熟」。</span></div><div class="item-row"><span class="num-circle">⑥</span><span class="item-text">假成功警戒：講座結束後若只有「很感動、很豐富」的感受，卻沒有行動卡、問題清單、承載量判斷或停止條件，視為未達最低成功標準。</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#EEEBFF;color:#6B5CE7;">💡</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 06</span>
+        <span class="section-title">建議方案</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>方案</th>
+            <th>解決</th>
+            <th>難度</th>
+            <th>費用</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="recommended">
+            <td>方案 A：處境式講座＋三個月行動卡</td>
+            <td>請吳牧師先用 20 分鐘講臨安經驗，再用 50 分鐘回應水底寮「外展停滯、探訪低動能、青少年行動缺後續」案例，最後 30 分鐘協助現場判斷 A 級行動卡是否可行；若不可行，就完成 B 級共同語言、問題清單與承載量判斷。</td>
+            <td>中</td>
+            <td>低；主要成本為講員費、餐點、列印與行政聯繫。</td>
+          </tr>
+          <tr>
+            <td>方案 B：純專題演講</td>
+            <td>讓吳牧師完整介紹臨安學苑、反脆弱、自我牧養與高齡照護模式。</td>
+            <td>低</td>
+            <td>低；但講後轉化成本高。</td>
+          </tr>
+          <tr>
+            <td>方案 C：工作坊式共創</td>
+            <td>用半天時間讓長執、家屬與社區夥伴分組設計水底寮高齡事工。</td>
+            <td>高</td>
+            <td>中；需要主持設計、分組引導、紀錄與後續追蹤。</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note-box">推薦方案 A：它能保留吳牧師的臨安經驗深度，又能避免水底寮直接複製城市型教會模式。講座設計的關鍵不是把臨安學苑搬到水底寮，而是萃取「知識賦權、互助共學、反脆弱、信徒能動性」四個原理，轉成鄉村教會小規模可行版本。此方案也保留「做不動」的價值：若教會目前無法啟動行動，仍要誠實診斷承載量，而不是製造一個看似成功、實際無法承接的新事工。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#D6FFE8;color:#0A8A4A;">🚀</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 07</span>
+        <span class="section-title">實施計劃</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="timeline">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">講座前 14 至 10 天｜蒐集在地問題與承載量線索</div><div class="step-desc">請長執、關懷組、曾上徐醫師課程的同工，各提交 1 個失智照護或高齡牧養問題；同時記錄目前做不動的原因，分成缺方案、缺人力、缺信心、缺重新看見長者與照顧者的眼光四類。</div></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">講座前 9 至 7 天｜寄出講員簡報</div><div class="step-desc">提供吳牧師：水底寮教會現況、同工限制、外展停滯狀態、家庭探訪低動能、青少年撿煙蒂與淨灘經驗、徐醫師課程基礎、期待回應的 5 個問題、希望產出的三個月行動卡。</div></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">講座當天 Phase 1｜建立共同語言</div><div class="step-desc">開場 10 分鐘由牧師說明：本場不是要複製臨安教會，也不是要立刻多做一個新事工，而是學會如何在水底寮預備不怕失智的未來；不怕失智不是保證不會失去記憶，而是相信即使記憶失落，人仍然不該被遺忘。</div></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">講座當天 Phase 2｜臨安經驗轉譯</div><div class="step-desc">請吳牧師以三題分享：臨安教會如何讓長者從受照顧者變成學習者？如何讓教會從活動提供者變成社區網絡樞紐？如何在老病死壓力中建立反脆弱群體？</div></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">講座當天 Phase 3｜水底寮案例演練</div><div class="step-desc">以三個案例讓吳牧師回應：外展停滯時如何重啟第一步？家庭探訪意願低時如何改成低壓力接觸？若目前做不動，如何留下共同語言、問題清單與承載量判斷，而不是假裝成功？</div></div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">講座後 30 至 90 天｜依 A/B 成果承接</div><div class="step-desc">若達 A 級成果，從「記得你ê名安養機構陪伴」、「照顧者低壓力茶敘」、「青少年＋長者社區健康走讀」三者選一個開始；每月一次，連續三次後檢討。若只達 B 級成果，30 天內召開一次核心同工短會，確認暫緩、改版或等待條件成熟。</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFE0EC;color:#D63384;">⛔</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 08</span>
+        <span class="section-title">排除範圍</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="item-row"><span class="code-tag">EX-01</span><span class="item-text">本講座不以建立完整長照據點為目標；長照據點涉及人力、空間、法規、經費與行政評鑑，需另開專案。</span></div>
+      <div class="item-row"><span class="code-tag">EX-02</span><span class="item-text">本講座不提供失智症診斷、藥物建議或個案醫療判斷；疑似個案需轉介醫療與長照專業。</span></div>
+      <div class="item-row"><span class="code-tag">EX-03</span><span class="item-text">本講座不要求水底寮教會複製臨安學苑的專書共讀規模、收費制度或線上同步課程。</span></div>
+      <div class="item-row"><span class="code-tag">EX-04</span><span class="item-text">本講座不把所有高齡議題一次處理完；優先聚焦「失智預備、家庭照顧者支持、安養機構陪伴、教會共學」四項。</span></div><div class="item-row"><span class="code-tag">EX-05</span><span class="item-text">本講座不把「沒有行動方案」直接判定為失敗；若教會目前承載量不足，誠實診斷與暫緩決策屬於本次講座的有效成果。</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFF3D6;color:#D4900A;">⚠️</div>
+      <div class="section-label">
+        <span class="section-num">SECTION 09</span>
+        <span class="section-title">風險與假設</span>
+      </div>
+    </div>
+    <div class="section-box">
+      <div class="sub-block">
+        <div class="sub-label">隱含假設</div>
+        <ul class="mini-list">
+          <li>假設吳牧師願意依水底寮處境調整分享，而非只使用既有講稿。</li>
+          <li>假設曾上徐醫師課程的同工能把醫學與靈性照護觀念轉成水底寮案例。</li>
+          <li>假設講座參與者願意在講後投入至少一次小規模實驗；若此假設不成立，講座仍需產出共同語言、問題清單與承載量判斷。</li>
+        </ul>
+      </div>
+      <div class="sub-block">
+        <div class="sub-label">依賴風險</div>
+        <ul class="mini-list">
+          <li>若講員簡報太晚提供，吳牧師無法調整內容；備案：講座開場安排 15 分鐘由牧師口頭補充水底寮處境。</li>
+          <li>若參與者主要是原本疲乏的同工，三個月實驗會增加負擔；備案：實驗需合併既有「安養機構報佳音」或關懷組行程，不另開新時段。</li>
+          <li>若講後沒有召集人，行動卡會失效；備案：講座前先預邀 1 位長老或關懷組同工擔任 90 天召集人。若無人願意擔任召集人，現場不硬推行動卡，改採 B 級成果。</li>
+        </ul>
+      </div>
+      <div class="sub-block">
+        <div class="sub-label">魔鬼代言人挑戰</div>
+        <div class="item-row"><span class="pain-num">①</span><span class="item-text">完全不做會怎樣？短期不會立刻出事，但水底寮教會會錯過把徐醫師課程與臨安經驗串成在地高齡牧養路線的窗口；若真的做不動，也至少需要誠實留下做不動的原因。</span></div>
+        <div class="item-row"><span class="pain-num">②</span><span class="item-text">會不會只是多辦一場活動？若沒有講前簡報、講中案例、講後行動卡與 90 天檢討，講座會和過去淨街或淨灘一樣，留下美好記憶但缺少事工延續。</span></div>
+        <div class="item-row"><span class="pain-num">③</span><span class="item-text">會不會把城市教會模式硬套到鄉村？若直接複製臨安學苑，就有此風險；正確做法是萃取原理，再設計 8 至 15 人、每月一次、可由非專家帶領的小型版本。</span></div>
+      </div>
+      <div class="note-box">給吳牧師的 5 個建議提問：一、臨安教會最小可行版本是什麼？二、若水底寮沒有高閱讀習慣，也沒有穩定外展動能，如何做知識賦權？三、如何讓長者從被照顧者變成能貢獻的人？四、家庭探訪意願低時，教會如何用低壓力方式陪伴疑似失智家庭而不越過醫療邊界？五、若這場講座後做不出 90 天行動卡，如何判斷水底寮目前是缺方案、缺人力、缺信心，還是缺重新看見長者與照顧者的眼光？</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
