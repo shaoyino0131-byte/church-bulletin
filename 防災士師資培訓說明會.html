@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教社委員會防災士師資培訓說明會</title>
+<style>
+:root{
+  --bg:#f4efe7;
+  --paper:#fffdf8;
+  --ink:#1f2630;
+  --muted:#5a6574;
+  --gold:#9e6c2b;
+  --sage:#35584f;
+  --sage-soft:#e5efeb;
+  --sand:#eadfc8;
+  --line:#ddd3c2;
+  --shadow:0 10px 30px rgba(31,38,48,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Iowan Old Style","Source Han Serif TC","Noto Serif CJK TC","PingFang TC",serif;
+  background:
+    radial-gradient(circle at top right, rgba(158,108,43,.08), transparent 30%),
+    radial-gradient(circle at 15% 8%, rgba(53,88,79,.08), transparent 24%),
+    linear-gradient(180deg,#f5f0e7 0%,#f7f3eb 50%,#f1ebe0 100%);
+  color:var(--ink);
+  line-height:1.86;
+  font-size:17px;
+  letter-spacing:.02em;
+}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px 72px}
+.hero{
+  padding:90px 0 56px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:46px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(158,108,43,.22);
+}
+.hero::before{width:190px;height:190px;right:-70px;top:10px}
+.hero::after{width:94px;height:94px;right:14px;top:90px;border-color:rgba(53,88,79,.22)}
+.eyebrow{
+  font-family:ui-sans-serif,system-ui,-apple-system,"PingFang TC","Helvetica Neue",sans-serif;
+  font-size:12px;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:700;
+  margin-bottom:18px;
+}
+h1{
+  margin:0 0 18px;
+  font-size:54px;
+  line-height:1.08;
+}
+.subtitle{
+  margin:0 0 26px;
+  max-width:860px;
+  font-size:20px;
+  color:var(--muted);
+}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 12px;
+}
+.pill{
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.72);
+  font:13px ui-sans-serif,system-ui,-apple-system,"PingFang TC",sans-serif;
+  color:var(--muted);
+}
+.grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:18px;
+  margin-bottom:22px;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:26px 26px 24px;
+}
+.section{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:26px;
+  margin-bottom:18px;
+}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  margin-bottom:12px;
+}
+.no{
+  font:700 12px ui-sans-serif,system-ui,-apple-system,"PingFang TC",sans-serif;
+  letter-spacing:.24em;
+  color:var(--gold);
+}
+h2{
+  margin:0;
+  font-size:30px;
+  line-height:1.25;
+}
+h3{margin:0 0 10px;font-size:20px}
+p{margin:0 0 14px}
+ul{margin:0;padding-left:1.2em}
+li{margin:0 0 10px}
+.quote{
+  border-left:4px solid var(--gold);
+  padding:10px 0 10px 16px;
+  margin:18px 0;
+  font-size:21px;
+  line-height:1.56;
+  font-style:italic;
+}
+.quote small{
+  display:block;
+  margin-top:10px;
+  color:var(--muted);
+  font:13px ui-sans-serif,system-ui,-apple-system,"PingFang TC",sans-serif;
+  font-style:normal;
+}
+.two-col{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.mini{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px 18px 16px;
+}
+.mini strong{display:block;margin-bottom:8px}
+.mini p{margin:0;color:var(--muted);font-size:15px}
+.tagrow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+.tag{
+  padding:7px 11px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:#fff;
+  font:13px ui-sans-serif,system-ui,-apple-system,"PingFang TC",sans-serif;
+}
+.tag.gold{background:#f2e2c6}
+.tag.green{background:var(--sage-soft)}
+.note{
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.86));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px 24px;
+}
+.footer{
+  margin-top:28px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:var(--muted);
+  font:13px ui-sans-serif,system-ui,-apple-system,"PingFang TC",sans-serif;
+}
+@media (max-width:860px){
+  h1{font-size:38px}
+  .grid,.two-col{grid-template-columns:1fr}
+  .subtitle{font-size:18px}
+  h2{font-size:24px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">說明會整理 · 教社委員會 / 防災士師資培訓</div>
+    <h1>教社委員會防災士師資培訓說明會</h1>
+    <p class="subtitle">這份 HTML 筆記整理一場關於「防災士師資培訓」的說明會，重點在於：哪些人可以成為師資、基本師資與種子師資怎麼分、各中會如何安排時程，以及接下來該怎麼把名單送出與開班完成。</p>
+    <div class="meta">
+      <span class="pill">主題：防災士師資培訓</span>
+      <span class="pill">對象：教社委員會、各中會代表</span>
+      <span class="pill">重點：師資分類、時程、招募</span>
+      <span class="pill">用途：會議筆記 / 說明整理</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="card">
+      <h3>這場說明會在談什麼</h3>
+      <p>會議的核心，是讓各教會和各中會了解防災士師資培訓的規則與進度。講者先說明：要成為課程的培訓師資，必須在內政部防災士的資料庫中，且不同類型的師資有不同要求。</p>
+      <p>接著，會議一路談到師資的分類、下半年度的培育時程、哪些區域已經排定、哪些地區還需要確認，以及如何在時間有限的情況下，把名單和課程安排往前推。</p>
+      <div class="quote">
+        我們現在要做的，不只是知道有這件事，而是要趕快把時間、地點和人選定案。
+        <small>會議的實際推動方向</small>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h3>快速重點</h3>
+      <ul>
+        <li>防災士師資有明確資格要求，不是所有人都能直接上課。</li>
+        <li>師資分成「基本師資」與「種子師資」。</li>
+        <li>種子師資需要更嚴格的條件，而且每三年要 renew。</li>
+        <li>下半年度的培育時程已經開始安排，時間點很重要。</li>
+        <li>北區、新竹、中區、東區已有進度，南區還需要再排。</li>
+      </ul>
+      <div class="tagrow">
+        <span class="tag gold">基本師資</span>
+        <span class="tag green">種子師資</span>
+        <span class="tag">各中會</span>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="no">01</div>
+      <h2>師資分類與門檻</h2>
+    </div>
+    <div class="two-col">
+      <div class="mini">
+        <strong>基本師資</strong>
+        <p>講者提到，基本師資大約有 1341 人，分布在民間團體、政府機構、醫療機構、大學學術團體和私人企業等單位。這類師資不需要每三年再做資格檢核。</p>
+      </div>
+      <div class="mini">
+        <strong>種子師資</strong>
+        <p>種子師資的要求比較嚴格，需要符合三個條件，且每三年要重新 renew 一次。這是接下來真正要培育、要送件、要開班訓練的核心人力。</p>
+      </div>
+      <div class="mini">
+        <strong>為什麼要分兩類</strong>
+        <p>因為有些人是特定專業領域出身，適合做基本師資；而種子師資則是未來要持續擴大培育、帶動各地訓練的人。</p>
+      </div>
+      <div class="mini">
+        <strong>誰比較可能成為師資</strong>
+        <p>例如在相關領域的學者專家、學校裡教防災的人、曾具護理師資格者，或專門從事急救工作的人，都比較有機會被納入考量。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="no">02</div>
+      <h2>下半年度時程</h2>
+    </div>
+    <ul>
+      <li>預計 11 月底先做內部 6 小時培訓。</li>
+      <li>培訓完成後，盡快把名單送到內政部。</li>
+      <li>希望 12 月能開班，完成課程後直接試教與測驗。</li>
+      <li>通過後，才算正式進入種子師資的培育流程。</li>
+      <li>明年就可以在各個中會進一步擴大推動防災士訓練。</li>
+    </ul>
+    <p style="margin-top:14px">會議中特別提醒：時程不能拖，因為有些經費申請與後續安排，需要在很短時間內完成。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="no">03</div>
+      <h2>地區安排與場地選擇</h2>
+    </div>
+    <p>北區、新竹、中區、東區都已經把時間排出來，但南區尚未安排。講者希望各中會代表能盡快提出意見，並確認時間與地點。</p>
+    <p>在場地討論上，因為要考量原住民教會、客家教會、交通便利性與實際參與人數，最後的方向是優先考慮新竹教會舉辦兩天課程，讓部落與客中較容易集合。</p>
+    <div class="two-col" style="margin-top:14px">
+      <div class="mini">
+        <strong>人數目標</strong>
+        <p>討論中提到，希望能有 30 人以上，這樣培訓比較有規模，也更容易成班。</p>
+      </div>
+      <div class="mini">
+        <strong>地點考量</strong>
+        <p>與會者多次強調便利性，認為新竹教會作為舉辦地點，對部落、客中與周邊教會都比較理想。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="no">04</div>
+      <h2>招募與邀請重點</h2>
+    </div>
+    <p>會議最後明確把任務交給在座的各教會、各中會代表：請大家趕快去邀請有潛力的師資。講者也特別提到，有人推薦普新教會的劉永奇牧師，因為他長期在談地震議題，屬於合適的人選。</p>
+    <div class="note">
+      <p><strong>可以先做的事：</strong></p>
+      <ul>
+        <li>確認各中會是否有意辦理師資培訓課程。</li>
+        <li>把時間、地點先定案，讓補助與報名可以往前走。</li>
+        <li>積極邀請具有防災、地震、急救、教育背景的人選。</li>
+        <li>確認 11 月與 12 月的關鍵節點，不要拖到最後一刻。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="no">05</div>
+      <h2>可直接帶走的結論</h2>
+    </div>
+    <ul>
+      <li>防災士師資培訓不是單純報名，而是有資格、有層級、有時程的推動工作。</li>
+      <li>基本師資與種子師資的差別，會直接影響未來的培訓與擴散能力。</li>
+      <li>現在最重要的不是討論概念，而是把時間、地點、名單和人選定下來。</li>
+      <li>新竹地區的兩天培訓方案，是目前討論中的較佳選項。</li>
+    </ul>
+    <div class="tagrow">
+      <span class="tag gold">11月底內訓</span>
+      <span class="tag green">12月開班</span>
+      <span class="tag">明年擴大推動</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="no">06</div>
+      <h2>一句話總結</h2>
+    </div>
+    <div class="quote" style="margin-top:0">
+      這場說明會的重點，就是把防災士師資培訓從「知道有這件事」推進到「名單、時程、地點都能落實」。
+      <small>會議最核心的行動方向</small>
+    </div>
+  </section>
+
+  <div class="footer">整理自 2026-07-08 09-06-24 逐字稿 · HTML 筆記版</div>
+</div>
+</body>
+</html>
