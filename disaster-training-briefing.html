@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教社委員會防災士培訓說明會 - 對外閱讀版</title>
+<style>
+:root{
+  --bg:#08111c;
+  --bg2:#0f1926;
+  --panel:#fff8ef;
+  --panel2:#f4efe7;
+  --ink:#111318;
+  --soft:#4f5b68;
+  --line:#e2d8c7;
+  --gold:#cc8f35;
+  --sage:#2d5a4f;
+  --blue:#355d82;
+  --goldSoft:#f3dfb9;
+  --sageSoft:#dcebe5;
+  --blueSoft:#dce7f2;
+  --cream:#fdfbf7;
+  --cream2:#fbf4e8;
+  --shadow:0 18px 50px rgba(0,0,0,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Noto Serif TC","PingFang TC","Hiragino Sans","Helvetica Neue",serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(204,143,53,.15), transparent 22%),
+    radial-gradient(circle at 90% 15%, rgba(45,90,79,.16), transparent 24%),
+    linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
+  color:var(--cream);
+  line-height:1.72;
+  overflow-x:hidden;
+}
+.page{
+  position:relative;
+  min-height:100vh;
+}
+.layers{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
+.orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(2px);
+  opacity:.9;
+  will-change:transform;
+}
+.orb.a{width:420px;height:420px;left:-110px;top:70px;background:radial-gradient(circle at 30% 30%, rgba(204,143,53,.42), rgba(204,143,53,.02) 72%)}
+.orb.b{width:520px;height:520px;right:-170px;top:260px;background:radial-gradient(circle at 30% 30%, rgba(45,90,79,.42), rgba(45,90,79,.02) 72%)}
+.orb.c{width:360px;height:360px;left:25%;bottom:-120px;background:radial-gradient(circle at 30% 30%, rgba(53,93,130,.36), rgba(53,93,130,.02) 72%)}
+.grid{
+  position:absolute;
+  inset:0;
+  opacity:.12;
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size:72px 72px;
+  mask-image:linear-gradient(180deg, rgba(0,0,0,.9), transparent 90%);
+}
+.noise{
+  position:absolute;
+  inset:0;
+  opacity:.05;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.8) 1px, transparent 0);
+  background-size:14px 14px;
+}
+.content{
+  position:relative;
+  z-index:1;
+}
+.wrap{
+  width:min(1220px, calc(100% - 56px));
+  margin:0 auto;
+}
+.hero{
+  min-height:100vh;
+  display:grid;
+  align-items:end;
+  padding:72px 0 54px;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#e7b15f;
+  font-weight:700;
+  margin-bottom:28px;
+}
+.eyebrow::before{
+  content:"";
+  width:34px;
+  height:2px;
+  background:#e7b15f;
+  display:inline-block;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:28px;
+  align-items:end;
+}
+.hero h1{
+  margin:0 0 24px;
+  font-size:clamp(56px, 7vw, 92px);
+  line-height:.96;
+  letter-spacing:-.03em;
+  color:var(--cream);
+}
+.hero p{
+  margin:0 0 24px;
+  max-width:760px;
+  font-size:clamp(22px, 2.2vw, 30px);
+  color:#dde5ee;
+}
+.lead-card{
+  background:rgba(255,248,239,.08);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(18px);
+  box-shadow:var(--shadow);
+  border-radius:26px;
+  padding:28px;
+}
+.lead-card .quote{
+  font-size:clamp(26px, 2.3vw, 38px);
+  line-height:1.22;
+  font-weight:800;
+  color:var(--cream);
+  margin:0 0 20px;
+}
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.chip{
+  padding:11px 16px;
+  border-radius:999px;
+  font-size:18px;
+  font-weight:700;
+  color:#0e1116;
+  background:var(--cream2);
+}
+.chip.gold{background:#f0d9b1}
+.chip.sage{background:#dcebe5}
+.chip.blue{background:#dce7f2}
+
+section{
+  padding:58px 0;
+}
+.section-head{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:24px;
+  align-items:end;
+  margin-bottom:24px;
+}
+.section-no{
+  color:#f0c37d;
+  letter-spacing:.28em;
+  font-size:14px;
+  font-weight:800;
+}
+.section-title{
+  margin:0;
+  color:var(--cream);
+  font-size:clamp(40px, 4.6vw, 66px);
+  line-height:.98;
+  letter-spacing:-.03em;
+}
+.section-subtitle{
+  margin:12px 0 0;
+  max-width:840px;
+  color:#dbe4ef;
+  font-size:clamp(20px, 2vw, 26px);
+}
+.panel-grid{
+  display:grid;
+  gap:18px;
+}
+.panel-grid.three{grid-template-columns:repeat(3, 1fr)}
+.panel-grid.two{grid-template-columns:repeat(2, 1fr)}
+.panel{
+  background:linear-gradient(180deg, rgba(255,250,243,.98), rgba(246,239,229,.96));
+  border:1px solid rgba(255,255,255,.56);
+  border-radius:26px;
+  padding:26px;
+  box-shadow:var(--shadow);
+  color:var(--ink);
+}
+.panel h3{
+  margin:0 0 14px;
+  font-size:clamp(34px, 3vw, 46px);
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.panel p,
+.panel li{
+  font-size:clamp(22px, 2vw, 28px);
+  color:var(--soft);
+}
+.panel ul{
+  margin:0;
+  padding-left:1.1em;
+}
+.panel li{margin:0 0 10px}
+.accent-strip{
+  width:10px;
+  border-radius:999px;
+  background:var(--gold);
+}
+.line-card{
+  display:grid;
+  grid-template-columns:10px 1fr;
+  gap:18px;
+  align-items:stretch;
+}
+.line-card .body{
+  background:linear-gradient(180deg, rgba(255,250,243,.98), rgba(246,239,229,.96));
+  border:1px solid rgba(255,255,255,.56);
+  border-radius:26px;
+  padding:24px 26px;
+  box-shadow:var(--shadow);
+}
+.line-card .body h3{
+  margin:0 0 12px;
+  font-size:clamp(34px, 3vw, 46px);
+}
+.line-card .body p{
+  margin:0;
+  font-size:clamp(22px, 2vw, 28px);
+  color:var(--soft);
+}
+.schedule{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:18px;
+}
+.schedule-card{
+  border-radius:26px;
+  padding:24px;
+  background:linear-gradient(180deg, rgba(255,250,243,.98), rgba(246,239,229,.96));
+  color:var(--ink);
+  border:1px solid rgba(255,255,255,.56);
+  box-shadow:var(--shadow);
+}
+.schedule-card .tag{
+  display:inline-block;
+  margin-bottom:16px;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.schedule-card h3{
+  margin:0 0 12px;
+  font-size:clamp(36px, 3vw, 48px);
+  line-height:1;
+}
+.schedule-card p{
+  margin:0;
+  font-size:clamp(22px, 2vw, 28px);
+  color:var(--soft);
+}
+.note-band{
+  margin-top:18px;
+  border-radius:24px;
+  background:rgba(8,17,28,.45);
+  border:1px solid rgba(255,255,255,.12);
+  padding:20px 24px;
+  color:#eef4f9;
+  font-size:clamp(22px, 2vw, 28px);
+  box-shadow:var(--shadow);
+}
+.footer{
+  padding:40px 0 70px;
+  color:#d0d9e4;
+  font-size:18px;
+  text-align:center;
+}
+.progress{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:4px;
+  background:rgba(255,255,255,.08);
+  z-index:3;
+}
+.progress > span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg, #e0b05d, #d8efe7, #b7d0f0);
+}
+
+@media (max-width: 980px){
+  .hero-grid,
+  .section-head,
+  .panel-grid.three,
+  .panel-grid.two,
+  .schedule{
+    grid-template-columns:1fr;
+  }
+  .hero{
+    min-height:auto;
+    padding-top:84px;
+  }
+  .wrap{width:min(100% - 28px, 1220px)}
+}
+</style>
+</head>
+<body>
+<div class="progress"><span id="progressBar"></span></div>
+
+<div class="page">
+  <div class="layers" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="noise"></div>
+    <div class="orb a" data-parallax="0.14"></div>
+    <div class="orb b" data-parallax="0.22"></div>
+    <div class="orb c" data-parallax="0.32"></div>
+  </div>
+
+  <div class="content">
+    <div class="wrap">
+      <header class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">對外閱讀版 · PCT 防災士培訓</div>
+            <h1>教社委員會<br>防災士培訓說明會</h1>
+            <p>整合逐字稿、訓練規劃方向與補充說明，做成一頁式長頁。這不是課程介紹而已，而是把教會接進社區韌性網絡的培訓規劃。</p>
+          </div>
+          <aside class="lead-card" data-parallax="0.08">
+            <div class="quote">這件事的重點，不是多辦一場課，而是把教會站穩在社區裡。</div>
+            <div class="chips">
+              <span class="chip gold">1,934 位師資</span>
+              <span class="chip sage">4 區分辦</span>
+              <span class="chip blue">14 小時訓練</span>
+              <span class="chip">教會中心</span>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <section>
+        <div class="section-head">
+          <div class="section-no">01</div>
+          <div>
+            <h2 class="section-title">為什麼現在要做</h2>
+            <p class="section-subtitle">防災士不是多一個名目，而是把自助、互助、公助導入地方，讓教會在平時、災時、災後都能成為社區可靠的節點。</p>
+          </div>
+        </div>
+        <div class="panel-grid three">
+          <article class="panel" data-parallax="0.04">
+            <h3>平時</h3>
+            <ul>
+              <li>做防災準備與教育。</li>
+              <li>先把風險意識養起來。</li>
+              <li>讓教會先成為可信的資訊節點。</li>
+            </ul>
+          </article>
+          <article class="panel" data-parallax="0.08">
+            <h3>災時</h3>
+            <ul>
+              <li>協助避難、疏散與通報。</li>
+              <li>把資訊傳快，也傳對。</li>
+              <li>讓訊息落到地方，而不是停在公文。</li>
+            </ul>
+          </article>
+          <article class="panel" data-parallax="0.12">
+            <h3>災後</h3>
+            <ul>
+              <li>接住收容、物資與復原工作。</li>
+              <li>讓教會成為社區韌性的一部分。</li>
+              <li>把照顧工作變成長期實作。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-no">02</div>
+          <div>
+            <h2 class="section-title">師資怎麼分</h2>
+            <p class="section-subtitle">基本師資穩住底盤，種子師資負責擴大。若要把培訓做長做久，關鍵在於後者能否往各中會延伸。</p>
+          </div>
+        </div>
+        <div class="panel-grid two">
+          <article class="panel" data-parallax="0.06">
+            <h3>基本師資</h3>
+            <p>約 1,341 位，分布在民間、醫療、政府、學界與企業。這一層是穩定供給，不必每三年重新檢核。</p>
+          </article>
+          <article class="panel" data-parallax="0.10">
+            <h3>種子師資</h3>
+            <p>約 593 位，條件較嚴格，還要每三年 renew。這一層是未來擴大訓練與往地方推動的核心。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-no">03</div>
+          <div>
+            <h2 class="section-title">PCT 的做法</h2>
+            <p class="section-subtitle">把課程帶回教會所在的地區，讓培訓不是外加活動，而是直接接到在地韌性。</p>
+          </div>
+        </div>
+        <div class="line-card" data-parallax="0.05">
+          <div class="accent-strip"></div>
+          <div class="body">
+            <h3>以教會為中心</h3>
+            <p>教會不只是聚會場所，而是社區裡可以承接防災與韌性工作的中心。PCT 的重點，是讓訓練真正回到地方脈絡。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-no">04</div>
+          <div>
+            <h2 class="section-title">課程怎麼走</h2>
+            <p class="section-subtitle">五個模組完成 14 小時訓練與測驗，內容從災防體系到社區防災計畫，最後要落回行動。</p>
+          </div>
+        </div>
+        <div class="panel-grid two">
+          <article class="panel" data-parallax="0.04">
+            <h3>五個模組</h3>
+            <ul>
+              <li>模組一 災防體系、職責與任務</li>
+              <li>模組二 災害經驗與災害特性</li>
+              <li>模組三 資訊掌握與社區防災計畫</li>
+              <li>模組四 基礎急救與術科測驗</li>
+              <li>模組五 居家防護、避難收容、社區防災與計畫實作</li>
+            </ul>
+          </article>
+          <article class="panel" data-parallax="0.10">
+            <h3>參訓重點</h3>
+            <ul>
+              <li>全程參與兩日課程。</li>
+              <li>完成學科與術科測驗。</li>
+              <li>報到時攜帶身分證與健保卡。</li>
+              <li>主辦單位提供講義與午餐餐盒。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-no">05</div>
+          <div>
+            <h2 class="section-title">四區已排定</h2>
+            <p class="section-subtitle">目前最重要的不是再加內容，而是把日期、地點與人數規模先定穩，避免師資調度互相打架。</p>
+          </div>
+        </div>
+        <div class="schedule">
+          <article class="schedule-card" data-parallax="0.05">
+            <span class="tag" style="background:var(--sageSoft);color:var(--sage)">北區</span>
+            <h3>8/22、8/29</h3>
+            <p>七星中會台北東門教會教育館 2 樓<br>80 人</p>
+          </article>
+          <article class="schedule-card" data-parallax="0.08">
+            <span class="tag" style="background:var(--goldSoft);color:var(--gold)">新竹地區</span>
+            <h3>9/26、10/3</h3>
+            <p>新竹教會二樓禮拜堂<br>100 人</p>
+          </article>
+          <article class="schedule-card" data-parallax="0.11">
+            <span class="tag" style="background:var(--blueSoft);color:var(--blue)">中區</span>
+            <h3>9/5、9/12</h3>
+            <p>台中中會篤行教會<br>100 人</p>
+          </article>
+          <article class="schedule-card" data-parallax="0.14">
+            <span class="tag" style="background:#f1e6d1;color:#7f5a20">東區</span>
+            <h3>11/7、11/14</h3>
+            <p>東美中會都蘭教會<br>180 人</p>
+          </article>
+        </div>
+        <div class="note-band" data-parallax="0.05">
+          總會預計 11 月底先做 6 小時內部培訓，12 月再接內政部開班與試教。
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-no">06</div>
+          <div>
+            <h2 class="section-title">下一步</h2>
+            <p class="section-subtitle">這場說明會最實際的結論，就是把下一步可以立即推動的事講清楚。</p>
+          </div>
+        </div>
+        <div class="panel-grid three">
+          <article class="panel" data-parallax="0.04">
+            <h3>先找對人</h3>
+            <p>優先邀請具防災、消防、急救、教育背景的人選，也可納入長期關心地震議題的牧者。</p>
+          </article>
+          <article class="panel" data-parallax="0.08">
+            <h3>先排定場地</h3>
+            <p>各中會先確認是否要辦，並把地點、人數與交通便利性定下來，讓報名和補助可以前進。</p>
+          </article>
+          <article class="panel" data-parallax="0.12">
+            <h3>先把流程走完</h3>
+            <p>名單送件、內部培訓、12 月開班、試教測驗，一步一步往前，明年就能擴大推動。</p>
+          </article>
+        </div>
+        <div class="note-band" data-parallax="0.04">
+          讓教會成為守護社區的地方，讓培訓成為地方韌性的開始。
+        </div>
+      </section>
+
+      <div class="footer">
+        整理自 2026-07-08 防災士培訓說明會逐字稿、〈20260526防災士訓練規劃方向〉與〈PCT防災士培訓說明會_20260708.pdf〉
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const layers = [...document.querySelectorAll("[data-parallax]")];
+  const bar = document.getElementById("progressBar");
+  let ticking = false;
+
+  function update() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? (window.scrollY / max) * 100 : 0;
+    bar.style.width = progress + "%";
+
+    for (const el of layers) {
+      const speed = parseFloat(el.dataset.parallax || "0");
+      const base = window.scrollY * speed;
+      el.style.transform = `translate3d(0, ${base}px, 0)`;
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener("resize", update);
+  update();
+</script>
+</body>
+</html>
